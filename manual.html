@@ -1,1 +1,93 @@
-Manual for Remote Operation of the Irregular Telegraph
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<article>
+
+<h1>Manual for Remote Operation of the Irregular Telegraph</h1>
+
+<blockquote>This document is provided in collaboration with the Irregular Operations Line Service (IOLS) with permission under clause of the Remote Operation Act. Use for any other purpose is prohibited.</blockquote>
+
+<p>For All Remote Operators of the Remote Irregular Telegraph (henceforth the RIT) (also known as the <i>“Stained Telegraph”</i>), this Manual will explain the basic functions and order of freight operations for all Choir Trains.</p>
+<p>This manual walks through the operations:</p>
+<ol>
+    <li>accepting orders.</li>
+    <li>buying wares.</li>
+    <li>finding addresses of recipients.</li>
+    <li>filing orders into order slips with the correct information.</li>
+    <li>offloading wares at stations with the matching order slip.</li>
+</ol>
+<p>
+    1, 2 and 5 can only be used while the train is <i>stationary</i>.
+    
+    3 and 4 can only be used while the train is <i>driving</i>.</p>
+</p>
+
+<h2>0. Status and Awareness</h2>
+<h3>Seeing current information</h3>
+<p>At all times you can inspect the status of your train with this command:</p>
+<blockquote>/info</blockquote>
+<p>See the current status and information of the train.<br>
+
+    Includes information on current whereabouts and direction.<br>
+    
+    Refer to the [Atlas of the Known World](https://www.notion.so/Atlas-of-the-Known-World-62016ff131514dd9b6741cb0990c022b?pvs=21) to understand your location.</p>
+
+<h3>Seeing the inventory</h3>
+<p>At all times you can inspect the contents of the train with this command:</p>
+<blockquote>/inventory</blockquote>
+<p>Inventory is used to inspect your current inventory. Use this to know how much money you have at your disposal, as well as all wares purchased, and orders accepted.
+<br>
+    For responsible operation, you should always be mindful of the amount of money available. Overspending will reflect poorly on your stature.</p>
+
+<h1 class="colored">STATIONARY</h1>
+
+<h2>1. Accepting Orders</h2>
+<p>Command:</p>
+<blockquote>/station receive</blockquote>
+<p>
+    This command receives a random assortment of available orders at your station.
+
+You will get three to choose from. <br>
+
+Each order lists a <b>ware</b>, a <ib>recipient</b>, an <b>estimated cost</b>, a <b>reward</b> a <b>destination</b> and an <b>estimated database corrosion</b>.
+</p>
+<ul>
+    <li>The <b>ware</b> is what they are asking for. You will need to acquire this and bring it to the customer. The stars (*) next to the name indicates the size of the ware.</li>
+    <li>The <b>recipient</b> is listed with their Official UC ID. You will use this to find their personal information for offloading (See Section 3). A UC ID follows the format 123-456.</li>
+    <li>The <b>reward</b> is how much money you will be paid once the order has been successfully completed.</li>
+    <li>The <b>estimated cost</b> is an estimation based on the regular price of the way and the travel cost with this ware (accruing taxes and tariffs). Note this is an estimation and may be inaccurate. We trust you judge the efficacy of the order judiciously.</li>
+    <li>The <b>destination</b> is the Precinct the order must be offloaded at. Consider this in relation to your current location when choosing. Further distances will require longer travel time (increasing expenditure of tariffs and taxes).</li>
+    <li>The <b>Estimated DB Corrosion</b> is an estimation of the corrosion of the data for the recipient. Less corroded data will make the recipients information easier to ascertain. More corroded entries should be left to experienced Operators.</li>
+</ul>
+<p>Pick the most profitable and efficient based on your needs by pressing the appropriate of the three buttons.<br>
+Remember you can see your available money, your current orders and wares with the inventory command. It may be valuable to inspect the price chart (Section 2.1) before you choose.</p>
+
+<p><b>1.a Penalties Upon Failing to Receive Orders</b><br>
+
+If you <b>cancel</b> the order reception procedure or <b>fail to pick</b> an order within <b>5 minutes</b> of requesting, you will be incurred a penalty, due to increased administration costs. We expect you to be able to accept an order when you request.
+<br><br>
+<b>1.b Penalties Upon Failing to Deliver Orders</b><br>
+
+Keep in mind that failure to deliver an order will also accrue a severe penalty (and unhappy customers). We expect you to pick orders you are able to complete.</p>
+
+<h2>2. Buying Wares</h2>
+<blockquote>/station buy [ware] [amount]</blockquote>
+<p>To fulfill orders you will need to buy the appropriate wares.<br>
+
+    The buy command can buy any wares the current station has. Note, not all wares will be sold at all stations. Refer to the map.<br>
+    
+    A further command will help you here:</p>
+
+<b>Seeing the Price chart</b>
+<blockquote>/station pricechart</blockquote>
+<p>Price chart is used to inspect the current purchase prices at this station. Use this to consider what wares to purchase and what orders to accept.</p>
+
+<p>Ware prices might differ at each station. Be mindful of this when choosing orders to fulfill, as there is much to be gained from choosing your options wisely.</p>
+
+<p>Refer to the [Atlas of the Known World](https://www.notion.so/Atlas-of-the-Known-World-62016ff131514dd9b6741cb0990c022b?pvs=21) for guidance of general pricing, although we are aware this does not provide complete information.</p>
+</article>
+</body>
+</html> 

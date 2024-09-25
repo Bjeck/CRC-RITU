@@ -1,8 +1,77 @@
 body {
-  background-color: lightblue;
+  background-image: url("background.png");
+  background-repeat: repeat-y;
+}
+body.home {
+  background: url("backgroundflair.png");  
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-y: top;
+}
+
+
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 1fr 10px 740px 10px 1fr 1fr;
+}
+
+article > * {
+  grid-column: 4;
+  color: black;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+}
+
+article > p{
+  margin: 5 
+}
+
+article > figure {
+  grid-column: 2 / -2;
+  margin: 10px auto;
+  place-items: center;
+}
+
+
+article > blockquote {
+  grid-column: 3 / 5;
+  padding-left: 10px;
+  color: black;
+  border-left: 3px solid black;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
 }
 
 h1 {
-  color: navy;
-  margin-left: 20px;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: xx-large;
+  margin-bottom: 0;
 }
+
+h1.colored {
+  background-color:rgb(255, 229, 199);
+}
+
+h2 {
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  margin: 5 0 0 0;
+}
+
+h3 {
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  margin: 5 0 0 0;
+}
+
+ol {
+  margin: 0;
+}
+ul {
+  margin: 0;
+}
+
