@@ -8,7 +8,10 @@ body.home {
   background-position: right;
   background-position-y: top;
 }
-
+body.atlas {
+  background: none;  
+  background-color: white;
+}
 
 
 article {
@@ -32,6 +35,13 @@ article > figure {
   margin: 10px auto;
   place-items: center;
 }
+
+figure.full {
+  grid-column: 1 / -1;
+  margin: 0px auto;
+  place-items: left;
+}
+
 
 
 article > blockquote {
