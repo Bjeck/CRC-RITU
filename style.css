@@ -54,6 +54,15 @@ h1.colored {
   background-color:rgb(255, 229, 199);
 }
 
+h1.coloredgreen {
+  background-color:rgb(191, 252, 204);
+}
+
+h1.coloredpurple {
+  background-color:rgb(209, 192, 255);
+}
+
+
 h2 {
   color: black;
   font-family: 'Courier New', Courier, monospace;
@@ -64,7 +73,7 @@ h2 {
 h3 {
   color: black;
   font-family: 'Courier New', Courier, monospace;
-  font-size: large;
+  font-size: larger;
   margin: 5 0 0 0;
 }
 
@@ -73,5 +82,8 @@ ol {
 }
 ul {
   margin: 0;
+}
+li {
+  padding-top: 5px;
 }
 

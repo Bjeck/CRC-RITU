@@ -43,6 +43,7 @@
     For responsible operation, you should always be mindful of the amount of money available. Overspending will reflect poorly on your stature.</p>
 
 <h1 class="colored">STATIONARY</h1>
+<p>The following commands are for use while the train is at a station.</p>
 
 <h2>1. Accepting Orders</h2>
 <p>Command:</p>
@@ -83,11 +84,231 @@ Keep in mind that failure to deliver an order will also accrue a severe penalty 
 
 <b>Seeing the Price chart</b>
 <blockquote>/station pricechart</blockquote>
-<p>Price chart is used to inspect the current purchase prices at this station. Use this to consider what wares to purchase and what orders to accept.</p>
+<p>Price chart is used to inspect the current purchase prices at this station. Use this to consider what wares to purchase and what orders to accept.<br>
+    Ware prices might differ at each station. Be mindful of this when choosing orders to fulfill, as there is much to be gained from choosing your options wisely.<br>
+    Refer to the [Atlas of the Known World](https://www.notion.so/Atlas-of-the-Known-World-62016ff131514dd9b6741cb0990c022b?pvs=21) for guidance of general pricing, although we are aware this does not provide complete information.</p>
 
-<p>Ware prices might differ at each station. Be mindful of this when choosing orders to fulfill, as there is much to be gained from choosing your options wisely.</p>
+<h1 class="coloredgreen">TRAVELLING</h1>
+<p>The following commands are for use while the train is traveling.</p>
 
-<p>Refer to the [Atlas of the Known World](https://www.notion.so/Atlas-of-the-Known-World-62016ff131514dd9b6741cb0990c022b?pvs=21) for guidance of general pricing, although we are aware this does not provide complete information.</p>
+<h2>3. Finding Recipient Information</h2>
+<p>To be able to fulfill the order, you will need to find <b>the home address</b> and <b>name</b> of the order recipient. This is required for completion of the order slip. <br>
+    
+    Every order contains a UC ID of the recipient that you will use as the starting point to find this information. Use the following command:</p>
+<blockquote>/query database [entry to query] [database key] [public]</blockquote>
+<p>Description of the arguments:</p>
+<ul>
+    <li>The “entry to query” must be exact to specifications. This is either the name of a person or an address.</li>
+    <li>Database key is the name of the database. See below of possible databases.</li>
+    <li>“Public” is whether the result should be visible to other fellow Operators. Defaults to False if not provided.</li>
+</ul>
+
+<p>Databases will likely return multiple possible results for any query. Existent database decomposition leaves individual databases incomplete and untrustworthy.<br>
+
+    Thus, in most cases, you will need to use multiple databases to determine the exact address or name of any recipient. It is up to you to determine the best method for this.</p>
+
+<p>The databases you have access to are below, listed by what type of data they accept.<br>
+If you are unsure where to start, start with the “person” database and use the information in there to find the Name and the Home Address of the recipient.</p>
+
+<h3>3.a Databases Accepting Person IDs</h3>
+<ol>
+    <li> Personal Register</li>
+    <ol type="a">
+        <li><i>The official UC Person Identification Database</i></li>
+        <li>database key: <strong>"person"</strong></li>
+        <li>Expects the ID of a person (An ID has the format 123-456). Outputs all known information about the person in the following order:</li>
+            <ol>
+                <li>Name</li>
+                <li>Job</li>
+                <li>Work Address</li>
+                <li>Home Address</li>
+                <li>District</li>
+            </ol>
+        <li>These may have No Entry. Use this to inform your future queries. This database is kept clean and any corrupted entry is deleted. Thus if this database has information, you can consider it trustworthy.</li>
+        <li>Note: You may be fortunate that this database includes both the name and the home address. In this case you will not need to consult any other databases and can proceed to Step 4.</li>
+
+    </ol>
+</ol>
+
+<hr>
+
+<h3 id="3-b-databases-accepting-names-">3.b Databases Accepting Names:</h3>
+<ol>
+<li>The UC Voting Registry:<ol>
+<li><em>The common voting registry for United Council voting information.</em></li>
+<li>database key: “<strong>voting</strong>”</li>
+<li>Expects the name of a person, outputs possible addresses linked to that person.</li>
+</ol>
+</li>
+<li>International Utility Archives:<ol>
+<li><i>The International Utility Archives, maintained by the TCSS.</i></li>
+<li>database key: “<strong>utility</strong>”</li>
+<li>Expects the name of a person, outputs possible districts that person lives in.</li>
+</ol>
+</li>
+<li>Occupation Census<ol>
+<li><em>The Occupation Census maintained by the Church for regulatory purposes.</em></li>
+<li>database key: <strong>“occupation”</strong></li>
+<li>Expects the name of a person, outputs possible known occupations and professions of that person.</li>
+</ol>
+</li>
+<li>Official Taxation Offices<ol>
+<li><em>Records maintained for Taxation purposes.</em></li>
+<li>database key: <strong>“offices”</strong></li>
+<li>Expects the name of a person, outputs possible work addresses of that person.</li>
+</ol>
+</li>
+<li>Internal RIT Operator Database<ol>
+<li>database key: <em>“internal”</em></li>
+<li>Advanced Internal storage. See 6.1 for more information about the Internal Database. This requires an upgrade and is not available at first.</li>
+</ol>
+</li>
+</ol>
+
+<hr>
+
+<h3 id="3-c-databases-accepting-addresses-">3.c Databases Accepting Addresses:</h3>
+<ol>
+<li>CRC Address Database<ol>
+<li><em>The CRC’s internal database of address information.</em> </li>
+<li>database key: “<strong>address</strong>”</li>
+<li>Expects the name of an address. Returns metadata on the address.<ol>
+<li>Key to understand the metadata: [vacancy][type][precinct][district]<ol>
+<li>Vacancy: 0 or 1. 0 indicates empty. 1 indicates the address is inhabited.</li>
+<li>Type. 0 = Residential address. 1 = Commercial. 2 = Official. 3 = State<ol>
+<li>NOTE: At your current clearance level, regular orders you receive will only be to residential addresses. All other addresses can be discarded.</li>
+</ol>
+</li>
+<li>Precinct: The number of the Precinct.</li>
+<li>District: District information following the Precinct postal district code.</li>
+</ol>
+</li>
+<li>NOTE: Metadata is purely informational. It can be useful to cross-reference but it is not proof of address.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Records of Estate<ol>
+<li><em>Records of Estate, collected and prepared by the Concord of Estate Agencies.</em></li>
+<li>database key: "<b>estate</b>"</li>
+<li>Expects a home address, outputs names of possible people living at the address. </li>
+</ol>
+</li>
+<li>CRC Employee Archives<ol>
+<li><em>Known records of Employees working at companies, gathered by the CRC.</em></li>
+<li>database key: "<b>employee</b>"</li>
+<li>Expects a work address, outputs names of possible employees at the address.</li>
+</ol>
+</li>
+<li>Popular Commuting Registry<ol>
+<li><em>Popular Commuting Registry, maintained by organized laborers.</em></li>
+<li>database key: "<b>commuting</b>"</li>
+<li>Expects a work address, outputs possible home addresses of employees at the address.</li>
+</ol>
+</li>
+</ol>
+
+<hr>
+
+<h3 id="3-d-databases-accepting-districts-">3.d Databases Accepting Districts:</h3>
+<p><i>NOTE: Due to the repetition of District numbers across Precincts, querying all Precincts for district information is not possible. Thus, when querying district databases, one must include the Precinct within the query, after the district. If one wants to search for District 3 in Precinct 5, the query is thus: “35”</i></p>
+<ol>
+<li>Postage District Information:<ol>
+<li><em>Database used by Postal Services and all courier activity. Highly accurate.</em></li>
+<li>database key: “<strong>postage</strong>”</li>
+<li>Expects the name of a district and precinct (two numbers). Returns all street addresses within that District.</li>
+</ol>
+</li>
+<li>Centralized Corporation Registry<ol>
+<li><em>Corporation Registry enforced by the UC for Taxation purposes.</em></li>
+<li>database key: "<b>companies</b>"</li>
+<li>Expects the name of a district and precinct (two numbers). Returns all known work addresses within that district.</li>
+</ol>
+</li>
+</ol>
+
+<hr>
+
+<h3 id="3-e-databases-accepting-street-names-">3.e Databases Accepting Street Names:</h3>
+<ol>
+<li>The Precinct Planning Street Registry<ol>
+<li><em>An aggregate database collecting street planning information from each Precinct.</em></li>
+<li>database key: "<b>street</b>"</li>
+<li>Expects the name of an entire street (no number)<strong>.</strong> Returns information about the street:<ol>
+<li>Length of street (used to know how many individual addresses exist)</li>
+<li>Names of Districts this street overlaps.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+<hr>
+
+<h3 id="3-f-databases-accepting-job-titles-">3.f Databases Accepting Job Titles:</h3>
+<ol>
+<li>Job Application Database<ol>
+<li><em>An unofficial database collected and maintained by recruiters and job searchers.</em></li>
+<li>database key: “<strong>application*</strong>”*</li>
+<li>Expects the name of a job title<strong>,</strong> outputs work addresses that employ that occupation.</li>
+</ol>
+</li>
+</ol>
+
+<p>Once you have determined the necessary information for an Orderslip with reasonable accuracy, you can move on to 4.</p>
+<p><strong>3.1 Corrosion</strong> <br>
+    It may be impossible to determine the name or address of a recipient in some difficult cases due to the natural database corrosion. If this happens, you may proceed and consult Step 4.b</p>
+
+<p><strong>3.2 Threading</strong> <br>
+    Any query provided in a channel will divert into a thread. This is for ease of use when using multiple queries to find the necessary information for one recipient. You may provide additional queries inside the thread, for organization.</p>
+<p><strong>3.3 Vacancy</strong> <br>
+Outside of being marked as empty in the Address information (see Section 3.c.1), an address can also be marked as vacant through its tenant being named “<strong>V. Vacant</strong>”. This is an legacy marking of Vacancy still used by the Estate Census. Any entry with this should be considered a vacant address at the time of reporting (yet of course, this may be corroded data and should be treated as no different than other information).</p>
+
+
+<h2 id="4-filling-order-slips">4. Filling Order Slips</h2>
+<p>With all information, you are able to fill an order slip. This is the command:</p>
+
+<blockquote>/travel fillorder</blockquote>
+
+<p>For this you will need the following information:</p>
+<ol>
+<li>Order ID. This is found in the original order.</li>
+<li>Recipient Name found in Operation 3. Spelling should be exact.</li>
+<li>Address found in Operation 3.</li>
+<li>Ware. List out the ware the order demands as a single line of text, no capitals:<ol>
+<li>Example: “shoes”</li>
+<li>Spaces are allowed if the ware is in multiple words.</li>
+</ol>
+</li>
+</ol>
+<p>This command allows adding the information directly into the command for easier access. After typed in, it will open a command window for you to confirm the data.</p>
+<h3 id="4-a-editing-orderslips">4.a Editing Orderslips</h3>
+<p>If needed you can use the following command to edit orderslips at any time when not at a station:</p>
+
+<blockquote>/travel editslip</blockquote>
+
+<p>This will open the command window for the order slip with the corresponding ID, and allow you to edit the data.</p>
+
+<h3 id="-4-b-filling-orderslips-with-corroded-addresses-and-names-"><strong>4.b Filling Orderslips With Corroded Addresses and Names</strong></h3>
+<p>As noted in Section 3.b you may have recipients whose address you cannot accurately determine. You may still fulfill an orderslip if this is the case.<br>
+    Any information you cannot determine, be it address or name, you may manually mark as corroded by typing in the following without quotations in the orderslip at the appropriate field:<br>
+”<b>For Decorrosion Provider</b>” (must be exact) <br> </p>
+<p>Note that offloading orders for Decorrosion Providers will cost a fee, yet this fee is cheaper than filing wrong information. If you are in doubt about the veracity of information, the Decorrosion Providers will be a less costly option than sending the ware to a wrong destination or recipient.</p>
+
+<h1 class="colored">STATIONARY</h1>
+<p>The following commands are for use while the train is at a station with a completed orderslip.</p>
+
+<h1 id="5-offloading-wares">5. Offloading Wares</h1>
+<p>Finally, once the order has been filled and is ready, you can offload the wares for the order at the appropriate station. 
+This is done with the following command:</p>
+
+<blockquote> /station offload_order [orderslip ID] [ware] </blockquote>
+
+<p>Please refer to the order for the appropriate wares to offload.<br>Offloading wares requires an active order AND an orderslip to be filled out and present in your inventory, as well as the ware.<br>The orderslip ID is identical to the Order ID.</p>
+
+<h1 class="coloredpurple">[THE] ARCHIVE</h1>
+
+
 </article>
 </body>
 </html> 
