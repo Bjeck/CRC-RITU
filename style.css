@@ -48,18 +48,30 @@ h1 {
   font-family: 'Courier New', Courier, monospace;
   font-size: xx-large;
   margin-bottom: 0;
+  grid-column: 3 / -3;
+}
+
+h1.top {
+  text-align: center;
+  grid-column: 2 / -2;
 }
 
 h1.colored {
   background-color:rgb(255, 229, 199);
+  text-align: left;
+  grid-column: 3 / -3;
 }
 
 h1.coloredgreen {
   background-color:rgb(191, 252, 204);
+  text-align: left;
+  grid-column: 3 / -3;
 }
 
 h1.coloredpurple {
   background-color:rgb(209, 192, 255);
+  text-align: left;
+  grid-column: 3 / -3;
 }
 
 

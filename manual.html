@@ -6,7 +6,7 @@
 <body>
 <article>
 
-<h1>Manual for Remote Operation of the Irregular Telegraph</h1>
+<h1 class="top">Manual for Remote Operation of the Irregular Telegraph</h1>
 
 <blockquote>This document is provided in collaboration with the Irregular Operations Line Service (IOLS) with permission under clause of the Remote Operation Act. Use for any other purpose is prohibited.</blockquote>
 
@@ -306,7 +306,86 @@ This is done with the following command:</p>
 
 <p>Please refer to the order for the appropriate wares to offload.<br>Offloading wares requires an active order AND an orderslip to be filled out and present in your inventory, as well as the ware.<br>The orderslip ID is identical to the Order ID.</p>
 
-<h1 class="coloredpurple">[THE] ARCHIVE</h1>
+
+
+<h1 id="6-advanced-upgrades-and-usage">6 Advanced Upgrades</h1>
+<p>While you will be equipped with all necessary functionality for train operation, it is possible for you to upgrade your capabilities for a fee.<br>As this is a /station command, upgrades can only be viewed and purchased at stations.<br>
+    See the possible upgrades with the following command:</p>
+
+<blockquote>/station upgrade</blockquote>
+
+<p>Upgrades are purchased using the same command, followed by an argument:</p>
+
+<blockquote>/station upgrade [name]</blockquote>
+
+<p>The [name] can either be the full name or the 3-letter Upgrade Code listed beside it.</p>
+<p>Some upgrades are self-explanatory and will not be explained here, yet some require some deeper explanations and are covered below.</p>
+
+
+<h3 id="-6-1-the-internal-database-uid-"><strong>6.1 Upgrade: The Internal Database (UID)</strong></h3>
+
+<p>As a certified RIT Unit Operator, you can gain access to an internally updatable database of addresses. This database is malleable and updated by you and your fellow operators. Proper maintenance of this database will allow easy rediscovery of addresses discovered previously, or you may find a fellow operator has already found what you are searching for.</p>
+<p>Usage of this is entirely optional and the internal database is only useful if you know the name of the recipient.</p>
+<p>The following command allows adding a new address to the database:</p>
+
+<blockquote>/query internalstorage [name] [address] </blockquote>
+
+<p>The name database will be checked against all existing names in all databases, to ensure you are not adding fake data.<br>You can also update existing information with the same command, using the name and the new address.<br>Querying this database in the future (see Section 3.b.5) will output information in the following format:</p>
+<pre><code class="lang-c">ID|<span class="hljs-string">Name :</span> Address (Last <span class="hljs-string">edited:</span> Timestamp)
+</code></pre>
+<p>The ID is useful for easy filling of order slips and reporting corrosion. Refer to Section 4.b, and 4.c.</p>
+<p>Beware, due to natural data decomposition, this database too can become corrupted if the entry has not been under proper maintenance. Refer to the timestamp when making your judgment of its veracity. As with all databases, older entries should be considered candidates for decorrosion.</p>
+<p><strong>6.1a Using Addresses in the Internal Database for Orderslips</strong></p>
+<p>Advanced use of the /fillorder command allows inputting the UC ID of the person stored in the internal address database into the address field when typing the command. Upon sending the /fillorder command, the internal database will be cross-referenced if a UC ID is present  in the address field, and if successful, the address will be filled in. You can refer to the command window to confirm.</p>
+<h3 id="6-2-corrosion-reporting-ucr-">6.2 Corrosion Reporting (UCR)</h3>
+<p>As per the nature of corroded databases, you might find an address impossible to conclusively ascertain from the databases. In this case, you can report it for corrosion repair at a local decorrosion provider. (Note: this is different from sending an order to a decorrosion provider, this is a more long-term solution that affects the database itself, rather than just the order).</p>
+<p>This is done through the following command:</p>
+
+<blockquote>/query report [id] [(optional) name]</blockquote>
+
+<p>Upon successfully reporting, this command will create an entry in the internal database (see 6.1) (This upgrade thus requires The Internal Database).<br>The address will in this case be marked for decorrosion. It is also possible to use this information for easy filling of orderslips same as the regular internal database. See 6.1a for information on how to do this. Note that while this has been filled, it will take a Decorrosion Provider some time to update the database information.<br>
+    You may optionally provide a name if you have determined it, and it will be stored in the entry as well. If not, it will automatically be filled in with the value “For Decorrosion Provider”</p>
+<p>Note that offloading orders for Decorrosion Providers costs a fee.</p>
+
+
+
+<h1 class="coloredpurple">[THE] <s>ARCHIVE</s></h1>
+
+<p>The Telegraph has also been equipped with an archival feature. See the following super-command and its sub-commands:</p>
+
+<blockquote>/archive</blockquote>
+
+<p>All messages sent to you will be present in the Archive through the following command:</p>
+
+<blockquote>/archive read [entry]</blockquote>
+
+<p>Usage of the Archive is not required of Operators and is viewed as extracurricular activity and thus is not thoroughly explained within this document.</p>
+<p>Excessive use is discouraged.</p>
+<p>The IOLS has advised that the Irregular Telegraph is experimental and can function unexpectedly. The Telegraph may receive messages sent by sources outside the CRC, which are not required for Freight Operation. The CRC or IOLS is not responsible nor legally bound by any such messages and they should be immediately discarded and ignored for your safety. Any such messages will be stored in the archive for future processing and inspection.</p>
+<p>Any suspicious activity seen on the Telegraph should be reported to your superiors.</p>
+<p>Other useful elements of the archive are the commands for the weekly newspaper and the CRC encyclopedia:</p>
+
+<blockquote>/archive encyclopedia</blockquote>
+
+<p>and</p>
+
+<blockquote>/archive newspaper</blockquote>
+
+<p>Use these when you wish.</p>
+
+<h1 class="coloredgreen">---</h1>
+
+<p>We trust that these guidelines will be enough to execute proper operation of the Choir Train you have been set in charge of, Operator.</p>
+<p>Best of luck.</p>
+<p>Document Approved By the CRC For Usage Towards the Remote Operation 5-offloading-wares</p>
+<blockquote>
+<p>CHOIR TRAIN 74</p>
+</blockquote>
+<p>This document must not be shared outside the CRC. Doing so is a punishable offense.</p>
+<p>Using the Irregular Telegraph for anything other than its intended purposes in this document is illegal and potentially harmful.</p>
+<p><i>— Salvation Through Faith —</i></p>
+
+
 
 
 </article>
