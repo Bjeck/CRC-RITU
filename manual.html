@@ -2,13 +2,21 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
 <article>
 
 <h1 class="top">Manual for Remote Operation of the Irregular Telegraph</h1>
 
-<blockquote>This document is provided in collaboration with the Irregular Operations Line Service (IOLS) with permission under clause of the Remote Operation Act. Use for any other purpose is prohibited.</blockquote>
+<blockquote>This document is provided in collaboration with the Irregular Operations Line Service (IOLS) under clause of the Remote Freight Operation Act. Use for any other purpose is prohibited.</blockquote>
 
 <p>For All Remote Operators of the Remote Irregular Telegraph (henceforth the RIT) (also known as the <i>“Stained Telegraph”</i>), this Manual will explain the basic functions and order of freight operations for all Choir Trains.</p>
 <p>This manual walks through the operations:</p>
@@ -25,7 +33,7 @@
     3 and 4 can only be used while the train is <i>driving</i>.</p>
 </p>
 
-<h2>0. Status and Awareness</h2>
+<h1>0. Status and Awareness</h1>
 <h3>Seeing current information</h3>
 <p>At all times you can inspect the status of your train with this command:</p>
 <blockquote>/info</blockquote>
@@ -45,7 +53,7 @@
 <h1 class="colored">STATIONARY</h1>
 <p>The following commands are for use while the train is at a station.</p>
 
-<h2>1. Accepting Orders</h2>
+<h1>1. Accepting Orders</h1>
 <p>Command:</p>
 <blockquote>/station receive</blockquote>
 <p>
@@ -53,7 +61,7 @@
 
 You will get three to choose from. <br>
 
-Each order lists a <b>ware</b>, a <ib>recipient</b>, an <b>estimated cost</b>, a <b>reward</b> a <b>destination</b> and an <b>estimated database corrosion</b>.
+Each order lists a <b>ware</b>, a <ib>recipient</b>, an <b>estimated cost</b>, a <b>reward</b>, a <b>destination</b>, and an <b>estimated database corrosion</b>.
 </p>
 <ul>
     <li>The <b>ware</b> is what they are asking for. You will need to acquire this and bring it to the customer. The stars (*) next to the name indicates the size of the ware.</li>
@@ -74,7 +82,7 @@ If you <b>cancel</b> the order reception procedure or <b>fail to pick</b> an ord
 
 Keep in mind that failure to deliver an order will also accrue a severe penalty (and unhappy customers). We expect you to pick orders you are able to complete.</p>
 
-<h2>2. Buying Wares</h2>
+<h1>2. Buying Wares</h1>
 <blockquote>/station buy [ware] [amount]</blockquote>
 <p>To fulfill orders you will need to buy the appropriate wares.<br>
 
@@ -91,7 +99,7 @@ Keep in mind that failure to deliver an order will also accrue a severe penalty 
 <h1 class="coloredgreen">TRAVELLING</h1>
 <p>The following commands are for use while the train is traveling.</p>
 
-<h2>3. Finding Recipient Information</h2>
+<h1>3. Finding Recipient Information</h1>
 <p>To be able to fulfill the order, you will need to find <b>the home address</b> and <b>name</b> of the order recipient. This is required for completion of the order slip. <br>
     
     Every order contains a UC ID of the recipient that you will use as the starting point to find this information. Use the following command:</p>
@@ -234,7 +242,7 @@ If you are unsure where to start, start with the “person” database and use t
 <li>The Precinct Planning Street Registry<ol>
 <li><em>An aggregate database collecting street planning information from each Precinct.</em></li>
 <li>database key: "<b>street</b>"</li>
-<li>Expects the name of an entire street (no number)<strong>.</strong> Returns information about the street:<ol>
+<li>Expects the name of an entire street (no number). Returns information about the street:<ol>
 <li>Length of street (used to know how many individual addresses exist)</li>
 <li>Names of Districts this street overlaps.</li>
 </ol>
@@ -249,7 +257,7 @@ If you are unsure where to start, start with the “person” database and use t
 <ol>
 <li>Job Application Database<ol>
 <li><em>An unofficial database collected and maintained by recruiters and job searchers.</em></li>
-<li>database key: “<strong>application*</strong>”*</li>
+<li>database key: “<strong>application</strong>”</li>
 <li>Expects the name of a job title<strong>,</strong> outputs work addresses that employ that occupation.</li>
 </ol>
 </li>
@@ -265,7 +273,7 @@ If you are unsure where to start, start with the “person” database and use t
 Outside of being marked as empty in the Address information (see Section 3.c.1), an address can also be marked as vacant through its tenant being named “<strong>V. Vacant</strong>”. This is an legacy marking of Vacancy still used by the Estate Census. Any entry with this should be considered a vacant address at the time of reporting (yet of course, this may be corroded data and should be treated as no different than other information).</p>
 
 
-<h2 id="4-filling-order-slips">4. Filling Order Slips</h2>
+<h1>4. Filling Order Slips</h1>
 <p>With all information, you are able to fill an order slip. This is the command:</p>
 
 <blockquote>/travel fillorder</blockquote>
@@ -298,7 +306,7 @@ Outside of being marked as empty in the Address information (see Section 3.c.1),
 <h1 class="colored">STATIONARY</h1>
 <p>The following commands are for use while the train is at a station with a completed orderslip.</p>
 
-<h1 id="5-offloading-wares">5. Offloading Wares</h1>
+<h1>5. Offloading Wares</h1>
 <p>Finally, once the order has been filled and is ready, you can offload the wares for the order at the appropriate station. 
 This is done with the following command:</p>
 
@@ -308,7 +316,7 @@ This is done with the following command:</p>
 
 
 
-<h1 id="6-advanced-upgrades-and-usage">6 Advanced Upgrades</h1>
+<h1>6. Advanced Upgrades</h1>
 <p>While you will be equipped with all necessary functionality for train operation, it is possible for you to upgrade your capabilities for a fee.<br>As this is a /station command, upgrades can only be viewed and purchased at stations.<br>
     See the possible upgrades with the following command:</p>
 
