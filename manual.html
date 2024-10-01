@@ -83,16 +83,14 @@ If you <b>cancel</b> the order reception procedure or <b>fail to pick</b> an ord
 Keep in mind that failure to deliver an order will also accrue a severe penalty (and unhappy customers). We expect you to pick orders you are able to complete.</p>
 
 <h1>2. Buying Wares</h1>
+<p>To fulfill orders you will need to buy the appropriate wares:<br></p>
 <blockquote>/station buy [ware] [amount]</blockquote>
-<p>To fulfill orders you will need to buy the appropriate wares.<br>
+<p>The buy command can buy any wares the current station has. Note, not all wares will be sold at all stations. It is advised to not purchase wares outside of the CRC market.</p>
 
-    The buy command can buy any wares the current station has. Note, not all wares will be sold at all stations. Refer to the map.<br>
-    
-    A further command will help you here:</p>
-
-<b>Seeing the Price chart</b>
+<strong>Seeing the CRC Price chart</strong>
+<p>The price chart shows the wares available at the CRC market at the local station.</p>
 <blockquote>/station pricechart</blockquote>
-<p>Price chart is used to inspect the current purchase prices at this station. Use this to consider what wares to purchase and what orders to accept.<br>
+<p>As per CRC policy, all purchases must go through official channels. As such, wares not listed in the pricechart are unsafe for purchase.<br>
     Ware prices might differ at each station. Be mindful of this when choosing orders to fulfill, as there is much to be gained from choosing your options wisely.<br>
     Refer to the <a href="./atlas.html">Atlas</a> for guidance of general pricing, although we are aware this does not provide complete information.</p>
 
@@ -279,16 +277,18 @@ Outside of being marked as empty in the Address information (see Section 3.c.1),
 <blockquote>/travel fillorder</blockquote>
 
 <p>For this you will need the following information:</p>
-<ol>
-<li>Order ID. This is found in the original order.</li>
-<li>Recipient Name found in Operation 3. Spelling should be exact.</li>
-<li>Address found in Operation 3.</li>
-<li>Ware. List out the ware the order demands as a single line of text, no capitals:<ol>
-<li>Example: “shoes”</li>
-<li>Spaces are allowed if the ware is in multiple words.</li>
-</ol>
-</li>
-</ol>
+    <ol>
+        <li>Order ID. This is found in the original order.</li>
+        <li>Recipient Name found in Operation 3. Spelling should be exact.</li>
+        <li>Address found in Operation 3.</li>
+        <li>Ware. List out the ware the order demands as a single line of text, no capitals:
+            <ol>
+            <li>Example: “shoes”</li>
+            <li>Spaces are allowed if the ware is in multiple words.</li>
+            <li>Note: The local customs agents depend on accurate reporting of wares on order slips.</li>
+            </ol>
+        </li>
+    </ol>
 <p>This command allows adding the information directly into the command for easier access. After typed in, it will open a command window for you to confirm the data.</p>
 <h3 id="4-a-editing-orderslips">4.a Editing Orderslips</h3>
 <p>If needed you can use the following command to edit orderslips at any time when not at a station:</p>
@@ -312,7 +312,12 @@ This is done with the following command:</p>
 
 <blockquote> /station offload_order [orderslip ID] [ware] </blockquote>
 
-<p>Please refer to the order for the appropriate wares to offload.<br>Offloading wares requires an active order AND an orderslip to be filled out and present in your inventory, as well as the ware.<br>The orderslip ID is identical to the Order ID.</p>
+<p>Please refer to the order for the appropriate wares to offload.<br>Offloading wares requires an active order AND an orderslip to be filled out and present in your inventory, as well as the ware.
+    <br>
+    The orderslip ID is identical to the Order ID.<br></p>
+    <p>Upon offloading, the orderslip will be inspected by customs. If all seems in order, it will be sent to the local courier service and transported to the recipient address. If all information on the Orderslip was correct, you will be paid the reward. If there are any issues, you will be forced to pay fines or fees.
+</p>
+
 
 
 
