@@ -218,18 +218,18 @@ If you are unsure where to start, start with the “person” database and use t
 <hr>
 
 <h3 id="3-d-databases-accepting-districts-">3.d Databases Accepting Districts:</h3>
-<p><i>NOTE: Due to the repetition of District numbers across Precincts, querying all Precincts for district information is not possible. Thus, when querying district databases, one must include the Precinct within the query, after the district. If one wants to search for District 3 in Precinct 5, the query is thus: “35”</i></p>
+<p><i>NOTE: Due to the repetition of District numbers across Precincts, querying all Precincts for district information is not possible. Thus, when querying district databases, one must include the Precinct within the query. If one wants to search for District 3 in Precinct 5, the query is thus: “3-5”</i></p>
 <ol>
 <li>Postage District Information:<ol>
 <li><em>Database used by Postal Services and all courier activity. Highly accurate.</em></li>
 <li>database key: “<strong>postage</strong>”</li>
-<li>Expects the name of a district and precinct (two numbers). Returns all street addresses within that District.</li>
+<li>Expects the name of a district and precinct ("district-precinct"). Returns all street addresses within that District.</li>
 </ol>
 </li>
 <li>Centralized Corporation Registry<ol>
 <li><em>Corporation Registry enforced by the UC for Taxation purposes.</em></li>
 <li>database key: "<b>companies</b>"</li>
-<li>Expects the name of a district and precinct (two numbers). Returns all known work addresses within that district.</li>
+<li>Expects the name of a district and precinct ("district-precinct"). Returns all known work addresses within that district.</li>
 </ol>
 </li>
 </ol>
