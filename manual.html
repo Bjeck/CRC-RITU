@@ -69,7 +69,7 @@ Each order lists a <b>ware</b>, a <ib>recipient</b>, an <b>estimated cost</b>, a
     <li>The <b>ware</b> is what they are asking for. You will need to acquire this and bring it to the customer. The stars (*) next to the name indicates the size of the ware.</li>
     <li>The <b>recipient</b> is listed with their Official UC ID. You will use this to find their personal information for offloading (See Section 3). A UC ID follows the format 123-456.</li>
     <li>The <b>reward</b> is how much money you will be paid once the order has been successfully completed.</li>
-    <li>The <b>estimated cost</b> is an estimation based on the regular price of the way and the travel cost with this ware (accruing taxes and tariffs). Note this is an estimation and may be inaccurate. We trust you judge the efficacy of the order judiciously.</li>
+    <li>The <b>estimated cost</b> is an estimation based on the regular price of the ware and the travel costs of storing it (accruing taxes and tariffs). This is an estimation and may be inaccurate. We trust you judge the efficacy of the order judiciously.</li>
     <li>The <b>destination</b> is the Precinct the order must be offloaded at. Consider this in relation to your current location when choosing. Further distances will require longer travel time (increasing expenditure of tariffs and taxes).</li>
     <li>The <b>Estimated DB Corrosion</b> is an estimation of the corrosion of the data for the recipient. Less corroded data will make the recipients information easier to ascertain. More corroded entries should be left to experienced Operators.</li>
 </ul>
@@ -114,7 +114,7 @@ Keep in mind that failure to deliver an order will also accrue a severe penalty 
 <ul>
     <li>The “entry to query” must be exact to specifications. This is either the name of a person or an address.</li>
     <li>Database key is the name of the database. See below of possible databases.</li>
-    <li>“Public” is whether the result should be visible to other fellow Operators. Defaults to False if not provided.</li>
+    <li>“Public” is whether the result should be visible to other fellow Operators. Defaults to True if not provided.</li>
 </ul>
 
 <p>Databases will likely return multiple possible results for any query. Existent database decomposition leaves individual databases incomplete and untrustworthy.<br>
@@ -357,8 +357,10 @@ This is done with the following command:</p>
 </code></pre>
 <p>The ID is useful for easy filling of order slips and reporting corrosion. Refer to Section 4.b, and 4.c.</p>
 <p>Beware, due to natural data decomposition, this database too can become corrupted if the entry has not been under proper maintenance. Refer to the timestamp when making your judgment of its veracity. As with all databases, older entries should be considered candidates for decorrosion.</p>
+
 <p><strong>6.1a Using Addresses in the Internal Database for Orderslips</strong></p>
 <p>Advanced use of the /fillorder command allows inputting the UC ID of the person stored in the internal address database into the address field when typing the command. Upon sending the /fillorder command, the internal database will be cross-referenced if a UC ID is present  in the address field, and if successful, the address will be filled in. You can refer to the command window to confirm.</p>
+
 <h3 id="6-2-corrosion-reporting-ucr-">6.2 Corrosion Reporting (UCR)</h3>
 <p>As per the nature of corroded databases, you might find an address impossible to conclusively ascertain from the databases. In this case, you can report it for corrosion repair at a local decorrosion provider. (Note: this is different from sending an order to a decorrosion provider, this is a more long-term solution that affects the database itself, rather than just the order).</p>
 <p>This is done through the following command:</p>
@@ -367,7 +369,7 @@ This is done with the following command:</p>
 
 <p>Upon successfully reporting, this command will create an entry in the internal database (see 6.1) (This upgrade thus requires The Internal Database).<br>The address will in this case be marked for decorrosion. It is also possible to use this information for easy filling of orderslips same as the regular internal database. See 6.1a for information on how to do this. Note that while this has been filled, it will take a Decorrosion Provider some time to update the database information.<br>
     You may optionally provide a name if you have determined it, and it will be stored in the entry as well. If not, it will automatically be filled in with the value “For Decorrosion Provider”</p>
-<p>Note that offloading orders for Decorrosion Providers costs a fee. The Connective Rail Company thanks you for fulfilling this service to improve decorrosion in our data.</p>
+<p>The Connective Rail Company thanks you for doing this service to improve decorrosion in our data.</p>
 
 
 
