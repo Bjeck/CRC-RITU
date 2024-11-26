@@ -151,31 +151,31 @@ If you are unsure where to start, start with the “person” database and use t
 
 <h3 id="3-b-databases-accepting-names-">3.b Databases Accepting Names:</h3>
 <ol>
-<li>The UC Voting Registry:<ol>
+<li>The UC Voting Registry:<ol type="a">
 <li><em>The common voting registry for United Council voting information.</em></li>
 <li>database key: “<strong>voting</strong>”</li>
 <li>Expects the name of a person, outputs possible addresses linked to that person.</li>
 </ol>
 </li>
-<li>International Utility Archives:<ol>
+<li>International Utility Archives:<ol type="a">
 <li><i>The International Utility Archives, maintained by the TCSS.</i></li>
 <li>database key: “<strong>utility</strong>”</li>
 <li>Expects the name of a person, outputs possible districts that person lives in.</li>
 </ol>
 </li>
-<li>Occupation Census<ol>
+<li>Occupation Census<ol type="a">
 <li><em>The Occupation Census maintained by the Church for regulatory purposes.</em></li>
 <li>database key: <strong>“occupation”</strong></li>
 <li>Expects the name of a person, outputs possible known occupations and professions of that person.</li>
 </ol>
 </li>
-<li>Official Taxation Offices<ol>
+<li>Official Taxation Offices<ol type="a">
 <li><em>Records maintained for Taxation purposes.</em></li>
 <li>database key: <strong>“offices”</strong></li>
 <li>Expects the name of a person, outputs possible work addresses of that person.</li>
 </ol>
 </li>
-<li>Internal RIT Operator Database<ol>
+<li>Internal RIT Operator Database<ol type="a">
 <li>database key: <strong>“internal”</strong></li>
 <li>Advanced Internal storage. See 6.1 for more information about the Internal Database. This requires an upgrade and is not available at first.</li>
 </ol>
@@ -189,10 +189,10 @@ If you are unsure where to start, start with the “person” database and use t
 <li>CRC Address Database<ol>
 <li><em>The CRC’s internal database of address information.</em> </li>
 <li>database key: “<strong>address</strong>”</li>
-<li>Expects the name of an address. Returns metadata on the address.<ol>
+<li>Expects the name of an address. Returns metadata on the address.<ol type="a">
 <li>Key to understand the metadata: [vacancy][type][precinct][district]<ol>
 <li>Vacancy: 0 or 1. 0 indicates empty. 1 indicates the address is inhabited.</li>
-<li>Type. 0 = Residential address. 1 = Commercial. 2 = Official. 3 = State<ol>
+<li>Type. 0 = Residential address. 1 = Commercial. 2 = Official. 3 = State<ol type="a">
 <li>NOTE: At your current clearance level, regular orders you receive will only be to residential addresses. All other addresses can be discarded.</li>
 </ol>
 </li>
@@ -200,24 +200,24 @@ If you are unsure where to start, start with the “person” database and use t
 <li>District: District information following the Precinct postal district code.</li>
 </ol>
 </li>
-<li>NOTE: Metadata is purely informational. It can be useful to cross-reference but it is not proof of address.</li>
+<li>NOTE: Metadata is purely informational. It can be useful to eliminate possibilities but it is not proof of address.</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>Records of Estate<ol>
+<li>Records of Estate<ol type="a">
 <li><em>Records of Estate, collected and prepared by the Concord of Estate Agencies.</em></li>
 <li>database key: "<b>estate</b>"</li>
 <li>Expects a home address, outputs names of possible people living at the address. </li>
 </ol>
 </li>
-<li>CRC Employee Archives<ol>
+<li>CRC Employee Archives<ol type="a">
 <li><em>Known records of Employees working at companies, gathered by the CRC.</em></li>
 <li>database key: "<b>employee</b>"</li>
 <li>Expects a work address, outputs names of possible employees at the address.</li>
 </ol>
 </li>
-<li>Popular Commuting Registry<ol>
+<li>Popular Commuting Registry<ol type="a">
 <li><em>Popular Commuting Registry, maintained by organized laborers.</em></li>
 <li>database key: "<b>commuting</b>"</li>
 <li>Expects a work address, outputs possible home addresses of employees at the address.</li>
@@ -230,13 +230,13 @@ If you are unsure where to start, start with the “person” database and use t
 <h3 id="3-d-databases-accepting-districts-">3.d Databases Accepting Districts:</h3>
 <p><i>NOTE: Due to the repetition of District numbers across Precincts, querying all Precincts for district information is not possible. Thus, when querying district databases, one must include the Precinct within the query. If one wants to search for District 3 in Precinct 5, the query is thus: “3-5”</i></p>
 <ol>
-<li>Postage District Information:<ol>
+<li>Postage District Information:<ol type="a">
 <li><em>Database used by Postal Services and all courier activity. Highly accurate.</em></li>
 <li>database key: “<strong>postage</strong>”</li>
 <li>Expects the name of a district and precinct ("district-precinct"). Returns all street addresses within that District.</li>
 </ol>
 </li>
-<li>Centralized Corporation Registry<ol>
+<li>Centralized Corporation Registry<ol type="a">
 <li><em>Corporation Registry enforced by the UC for Taxation purposes.</em></li>
 <li>database key: "<b>companies</b>"</li>
 <li>Expects the name of a district and precinct ("district-precinct"). Returns all known work addresses within that district.</li>
@@ -248,10 +248,10 @@ If you are unsure where to start, start with the “person” database and use t
 
 <h3 id="3-e-databases-accepting-street-names-">3.e Databases Accepting Street Names:</h3>
 <ol>
-<li>The Precinct Planning Street Registry<ol>
+<li>The Precinct Planning Street Registry<ol type="a">
 <li><em>An aggregate database collecting street planning information from each Precinct.</em></li>
 <li>database key: "<b>street</b>"</li>
-<li>Expects the name of an entire street (no number). Returns information about the street:<ol>
+<li>Expects the name of an entire street (no number). Returns information about the street:<ol type="a">
 <li>Length of street (used to know how many individual addresses exist)</li>
 <li>Names of Districts this street overlaps.</li>
 </ol>
@@ -264,7 +264,7 @@ If you are unsure where to start, start with the “person” database and use t
 
 <h3 id="3-f-databases-accepting-job-titles-">3.f Databases Accepting Job Titles:</h3>
 <ol>
-<li>Job Application Database<ol>
+<li>Job Application Database<ol type="a">
 <li><em>An unofficial database collected and maintained by recruiters and job searchers.</em></li>
 <li>database key: “<strong>application</strong>”</li>
 <li>Expects the name of a job title<strong>,</strong> outputs work addresses that employ that occupation.</li>
@@ -283,17 +283,21 @@ Outside of being marked as empty in the Address information (see Section 3.c.1),
 
 
 <h1>4. Filling Order Slips</h1>
-<p>With all information, you are able to fill an order slip. This is the command:</p>
+<p><em>Note, while this command is in the travel section you are able to use it while both travelling and stationary. This is due to a quirk in the IOLS protocols.</em></p>
+<p>Before you can offload an order, you must fill an order slip. This is the command:</p>
 
 <blockquote>/travel fillorder</blockquote>
 
 <p>For this you will need the following information:</p>
     <ol>
-        <li>Order ID. This is found in the original order.</li>
-        <li>Recipient Name found in Operation 3. Spelling should be exact.</li>
-        <li>Address found in Operation 3.</li>
-        <li>Ware. List out the ware the order demands as a single line of text, no capitals:
-            <ol>
+        <li><strong>Order ID</strong>. This is found in the original order.</li>
+        <li><strong>Recipient Name</strong> found in Section 3. Spelling should be exact.</li>
+        <li><strong>Address</strong> found in Section 3.</li>
+        <ol type="a">
+            <li>If either the address or recipent name is unknown or corroded, refer to Section 4.b</li>
+        </ol>
+        <li><strong>Ware</strong>. List out the ware the order demands as a single line of text, no capitals:
+            <ol type="a">
             <li>Example: “shoes”</li>
             <li>Spaces are allowed if the ware is in multiple words.</li>
             <li>The orderslip requires the ware to be on the train. The porters will check for the ware and report if the orderslip ware is not present on the train.</li>
@@ -301,7 +305,7 @@ Outside of being marked as empty in the Address information (see Section 3.c.1),
             </ol>
         </li>
     </ol>
-<p>This command allows adding the information directly into the command for easier access. After typed in, it will open a command window for you to confirm the data.</p>
+<p>If any information is filled incorrectly, this will incur a monetary penalty upon order offload. Refer to section 4.b if uncertain about recipient information.</p>
 <h3 id="4-a-editing-orderslips">4.a Editing Orderslips</h3>
 <p>If needed you can use the following command to edit orderslips at any time when not at a station:</p>
 
