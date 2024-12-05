@@ -29,10 +29,11 @@
     <li>offloading wares at stations with the matching order slip.</li>
 </ol>
 <p>
-    1, 2 and 5 can only be used while the train is <i>stationary</i>.
-    
-    3 and 4 can only be used while the train is <i>driving</i>.</p>
+    1, 2 and 5 can only be used while the train is <i>stationary</i>.<br>
+    3 and 4 can only be used while the train is <i>driving</i>.
 </p>
+<p>If this is your first time as an operator, use the following command to get started:</p>
+<blockquote>/startoperation</blockquote>
 
 <h1>0. Status and Awareness</h1>
 <h3>Seeing current information</h3>
@@ -71,7 +72,7 @@ Each order lists a <b>ware</b>, a <ib>recipient</b>, an <b>estimated cost</b>, a
     <li>The <b>ware</b> is what they are asking for. You will need to acquire this and bring it to the customer. The stars (*) next to the name indicates the size of the ware.</li>
     <li>The <b>recipient</b> is listed with their Official UC ID. You will use this to find their personal information for offloading (See Section 3). A UC ID follows the format 123-456.</li>
     <li>The <b>reward</b> is how much money you will be paid once the order has been successfully completed.</li>
-    <li>The <b>estimated cost</b> is an estimation based on the regular price of the way and the travel cost with this ware (accruing taxes and tariffs). Note this is an estimation and may be inaccurate. We trust you judge the efficacy of the order judiciously.</li>
+    <li>The <b>estimated cost</b> is an estimation based on the regular price of the ware and the travel costs of storing it (accruing taxes and tariffs). This is an estimation and may be inaccurate. We trust you judge the efficacy of the order judiciously.</li>
     <li>The <b>destination</b> is the Precinct the order must be offloaded at. Consider this in relation to your current location when choosing. Further distances will require longer travel time (increasing expenditure of tariffs and taxes).</li>
     <li>The <b>Estimated DB Corrosion</b> is an estimation of the corrosion of the data for the recipient. Less corroded data will make the recipients information easier to ascertain. More corroded entries should be left to experienced Operators.</li>
 </ul>
@@ -116,7 +117,7 @@ Keep in mind that failure to deliver an order will also accrue a severe penalty 
 <ul>
     <li>The “entry to query” must be exact to specifications. This is either the name of a person or an address.</li>
     <li>Database key is the name of the database. See below of possible databases.</li>
-    <li>“Public” is whether the result should be visible to other fellow Operators. Defaults to False if not provided.</li>
+    <li>“Public” is whether the result should be visible to other fellow Operators. Defaults to True if not provided.</li>
 </ul>
 
 <p>Databases will likely return multiple possible results for any query. Existent database decomposition leaves individual databases incomplete and untrustworthy.<br>
@@ -142,40 +143,43 @@ If you are unsure where to start, start with the “person” database and use t
             </ol>
         <li>These may have No Entry. Use this to inform your future queries. This database is kept clean and any corrupted entry is deleted. Thus if this database has information, you can consider it trustworthy.</li>
         <li>Note: You may be fortunate that this database includes both the name and the home address. In this case you will not need to consult any other databases and can proceed to Step 4.</li>
-
     </ol>
+	<li>Internal RIT Operator Database<ol>
+	<li>database key: <strong>“internal”</strong></li>
+	<li>Advanced Internal storage. See 6.1 for more information about the Internal Database. This requires an upgrade and is not available at first.</li>
+	</ol>
 </ol>
 
 <hr>
 
 <h3 id="3-b-databases-accepting-names-">3.b Databases Accepting Names:</h3>
 <ol>
-<li>The UC Voting Registry:<ol>
+<li>The UC Voting Registry:<ol type="a">
 <li><em>The common voting registry for United Council voting information.</em></li>
 <li>database key: “<strong>voting</strong>”</li>
 <li>Expects the name of a person, outputs possible addresses linked to that person.</li>
 </ol>
 </li>
-<li>International Utility Archives:<ol>
+<li>International Utility Archives:<ol type="a">
 <li><i>The International Utility Archives, maintained by the TCSS.</i></li>
 <li>database key: “<strong>utility</strong>”</li>
 <li>Expects the name of a person, outputs possible districts that person lives in.</li>
 </ol>
 </li>
-<li>Occupation Census<ol>
+<li>Occupation Census<ol type="a">
 <li><em>The Occupation Census maintained by the Church for regulatory purposes.</em></li>
 <li>database key: <strong>“occupation”</strong></li>
 <li>Expects the name of a person, outputs possible known occupations and professions of that person.</li>
 </ol>
 </li>
-<li>Official Taxation Offices<ol>
+<li>Official Taxation Offices<ol type="a">
 <li><em>Records maintained for Taxation purposes.</em></li>
 <li>database key: <strong>“offices”</strong></li>
 <li>Expects the name of a person, outputs possible work addresses of that person.</li>
 </ol>
 </li>
-<li>Internal RIT Operator Database<ol>
-<li>database key: <em>“internal”</em></li>
+<li>Internal RIT Operator Database<ol type="a">
+<li>database key: <strong>“internal”</strong></li>
 <li>Advanced Internal storage. See 6.1 for more information about the Internal Database. This requires an upgrade and is not available at first.</li>
 </ol>
 </li>
@@ -188,10 +192,10 @@ If you are unsure where to start, start with the “person” database and use t
 <li>CRC Address Database<ol>
 <li><em>The CRC’s internal database of address information.</em> </li>
 <li>database key: “<strong>address</strong>”</li>
-<li>Expects the name of an address. Returns metadata on the address.<ol>
+<li>Expects the name of an address. Returns metadata on the address.<ol type="a">
 <li>Key to understand the metadata: [vacancy][type][precinct][district]<ol>
 <li>Vacancy: 0 or 1. 0 indicates empty. 1 indicates the address is inhabited.</li>
-<li>Type. 0 = Residential address. 1 = Commercial. 2 = Official. 3 = State<ol>
+<li>Type. 0 = Residential address. 1 = Commercial. 2 = Official. 3 = State<ol type="a">
 <li>NOTE: At your current clearance level, regular orders you receive will only be to residential addresses. All other addresses can be discarded.</li>
 </ol>
 </li>
@@ -199,24 +203,24 @@ If you are unsure where to start, start with the “person” database and use t
 <li>District: District information following the Precinct postal district code.</li>
 </ol>
 </li>
-<li>NOTE: Metadata is purely informational. It can be useful to cross-reference but it is not proof of address.</li>
+<li>NOTE: Metadata is purely informational. It can be useful to eliminate possibilities but it is not proof of address.</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>Records of Estate<ol>
+<li>Records of Estate<ol type="a">
 <li><em>Records of Estate, collected and prepared by the Concord of Estate Agencies.</em></li>
 <li>database key: "<b>estate</b>"</li>
 <li>Expects a home address, outputs names of possible people living at the address. </li>
 </ol>
 </li>
-<li>CRC Employee Archives<ol>
+<li>CRC Employee Archives<ol type="a">
 <li><em>Known records of Employees working at companies, gathered by the CRC.</em></li>
 <li>database key: "<b>employee</b>"</li>
 <li>Expects a work address, outputs names of possible employees at the address.</li>
 </ol>
 </li>
-<li>Popular Commuting Registry<ol>
+<li>Popular Commuting Registry<ol type="a">
 <li><em>Popular Commuting Registry, maintained by organized laborers.</em></li>
 <li>database key: "<b>commuting</b>"</li>
 <li>Expects a work address, outputs possible home addresses of employees at the address.</li>
@@ -229,13 +233,13 @@ If you are unsure where to start, start with the “person” database and use t
 <h3 id="3-d-databases-accepting-districts-">3.d Databases Accepting Districts:</h3>
 <p><i>NOTE: Due to the repetition of District numbers across Precincts, querying all Precincts for district information is not possible. Thus, when querying district databases, one must include the Precinct within the query. If one wants to search for District 3 in Precinct 5, the query is thus: “3-5”</i></p>
 <ol>
-<li>Postage District Information:<ol>
+<li>Postage District Information:<ol type="a">
 <li><em>Database used by Postal Services and all courier activity. Highly accurate.</em></li>
 <li>database key: “<strong>postage</strong>”</li>
 <li>Expects the name of a district and precinct ("district-precinct"). Returns all street addresses within that District.</li>
 </ol>
 </li>
-<li>Centralized Corporation Registry<ol>
+<li>Centralized Corporation Registry<ol type="a">
 <li><em>Corporation Registry enforced by the UC for Taxation purposes.</em></li>
 <li>database key: "<b>companies</b>"</li>
 <li>Expects the name of a district and precinct ("district-precinct"). Returns all known work addresses within that district.</li>
@@ -247,10 +251,10 @@ If you are unsure where to start, start with the “person” database and use t
 
 <h3 id="3-e-databases-accepting-street-names-">3.e Databases Accepting Street Names:</h3>
 <ol>
-<li>The Precinct Planning Street Registry<ol>
+<li>The Precinct Planning Street Registry<ol type="a">
 <li><em>An aggregate database collecting street planning information from each Precinct.</em></li>
 <li>database key: "<b>street</b>"</li>
-<li>Expects the name of an entire street (no number). Returns information about the street:<ol>
+<li>Expects the name of an entire street (no number). Returns information about the street:<ol type="a">
 <li>Length of street (used to know how many individual addresses exist)</li>
 <li>Names of Districts this street overlaps.</li>
 </ol>
@@ -263,7 +267,7 @@ If you are unsure where to start, start with the “person” database and use t
 
 <h3 id="3-f-databases-accepting-job-titles-">3.f Databases Accepting Job Titles:</h3>
 <ol>
-<li>Job Application Database<ol>
+<li>Job Application Database<ol type="a">
 <li><em>An unofficial database collected and maintained by recruiters and job searchers.</em></li>
 <li>database key: “<strong>application</strong>”</li>
 <li>Expects the name of a job title<strong>,</strong> outputs work addresses that employ that occupation.</li>
@@ -282,17 +286,21 @@ Outside of being marked as empty in the Address information (see Section 3.c.1),
 
 
 <h1>4. Filling Order Slips</h1>
-<p>With all information, you are able to fill an order slip. This is the command:</p>
+<p><em>Note, while this command is in the travel section you are able to use it while both travelling and stationary. This is due to a quirk in the IOLS protocols.</em></p>
+<p>Before you can offload an order, you must fill an order slip. This is the command:</p>
 
 <blockquote>/travel fillorder</blockquote>
 
 <p>For this you will need the following information:</p>
     <ol>
-        <li>Order ID. This is found in the original order.</li>
-        <li>Recipient Name found in Operation 3. Spelling should be exact.</li>
-        <li>Address found in Operation 3.</li>
-        <li>Ware. List out the ware the order demands as a single line of text, no capitals:
-            <ol>
+        <li><strong>Order ID</strong>. This is found in the original order.</li>
+        <li><strong>Recipient Name</strong> found in Section 3. Spelling should be exact.</li>
+        <li><strong>Address</strong> found in Section 3.</li>
+        <ol type="a">
+            <li>If either the address or recipent name is unknown or corroded, refer to Section 4.b</li>
+        </ol>
+        <li><strong>Ware</strong>. List out the ware the order demands as a single line of text, no capitals:
+            <ol type="a">
             <li>Example: “shoes”</li>
             <li>Spaces are allowed if the ware is in multiple words.</li>
             <li>The orderslip requires the ware to be on the train. The porters will check for the ware and report if the orderslip ware is not present on the train.</li>
@@ -300,7 +308,7 @@ Outside of being marked as empty in the Address information (see Section 3.c.1),
             </ol>
         </li>
     </ol>
-<p>This command allows adding the information directly into the command for easier access. After typed in, it will open a command window for you to confirm the data.</p>
+<p>If any information is filled incorrectly, this will incur a monetary penalty upon order offload. Refer to section 4.b if uncertain about recipient information.</p>
 <h3 id="4-a-editing-orderslips">4.a Editing Orderslips</h3>
 <p>If needed you can use the following command to edit orderslips at any time when not at a station:</p>
 
@@ -359,8 +367,10 @@ This is done with the following command:</p>
 </code></pre>
 <p>The ID is useful for easy filling of order slips and reporting corrosion. Refer to Section 4.b, and 4.c.</p>
 <p>Beware, due to natural data decomposition, this database too can become corrupted if the entry has not been under proper maintenance. Refer to the timestamp when making your judgment of its veracity. As with all databases, older entries should be considered candidates for decorrosion.</p>
+
 <p><strong>6.1a Using Addresses in the Internal Database for Orderslips</strong></p>
 <p>Advanced use of the /fillorder command allows inputting the UC ID of the person stored in the internal address database into the address field when typing the command. Upon sending the /fillorder command, the internal database will be cross-referenced if a UC ID is present  in the address field, and if successful, the address will be filled in. You can refer to the command window to confirm.</p>
+
 <h3 id="6-2-corrosion-reporting-ucr-">6.2 Corrosion Reporting (UCR)</h3>
 <p>As per the nature of corroded databases, you might find an address impossible to conclusively ascertain from the databases. In this case, you can report it for corrosion repair at a local decorrosion provider. (Note: this is different from sending an order to a decorrosion provider, this is a more long-term solution that affects the database itself, rather than just the order).</p>
 <p>This is done through the following command:</p>
@@ -369,7 +379,7 @@ This is done with the following command:</p>
 
 <p>Upon successfully reporting, this command will create an entry in the internal database (see 6.1) (This upgrade thus requires The Internal Database).<br>The address will in this case be marked for decorrosion. It is also possible to use this information for easy filling of orderslips same as the regular internal database. See 6.1a for information on how to do this. Note that while this has been filled, it will take a Decorrosion Provider some time to update the database information.<br>
     You may optionally provide a name if you have determined it, and it will be stored in the entry as well. If not, it will automatically be filled in with the value “For Decorrosion Provider”</p>
-<p>Note that offloading orders for Decorrosion Providers costs a fee.</p>
+<p>The Connective Rail Company thanks you for doing this service to improve decorrosion in our data.</p>
 
 
 
