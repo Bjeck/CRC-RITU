@@ -20,29 +20,42 @@
 <blockquote>This document is provided in collaboration with the Irregular Operations Line Service (IOLS) under clause of the Remote Freight Operation Act. Use for any other purpose is prohibited.</blockquote>
 
 <p>For All Remote Operators of the Remote Irregular Telegraph (henceforth the RIT) (also known as the <i>“Stained Telegraph”</i>), this Manual will explain the basic functions and order of freight operations for all Choir Trains.</p>
-<p>This manual walks through the operations:</p>
+
+
+<h2>How to Use This Manual</h2>
+<p>The Telegraph is designed to be used by multiple people, filling different roles for successful operation<br>
+<i><br>The CRC notes that your allocated resources means you may have to work with fewer or more operators than this manual has been written for. We are confident you will make it work.</i>
+   <br><br> These roles are covered in each section below</p>
+
 <ol>
-    <li>accepting orders.</li>
-    <li>buying wares.</li>
-    <li>finding addresses of recipients.</li>
-    <li>filing orders into order slips with the correct information.</li>
-    <li>offloading wares at stations with the matching order slip.</li>
+    <li><b>The Trader</b> (Sections 1 and 2): <a href="./manual_orders.html">Receiving orders and Buying Wares</a> </li>
+        <ul>
+            <li>[STATIONARY]</li>
+            <li>This covers /receive, /buy, /sell, and /pricechart.</li>
+        </ul>
+    <li><b>The Investigator</b> (Sections 3 and 4): <a href="./manual_query.html">Querying information and filling order slips.</a></li>
+        <ul>
+            <li>[TRAVELLING]</li>
+            <li>This covers /query, /fillorder, and /editslip</li>
+        </ul>
+    <li><b>The Manager</b> (Sections 5 and 6): <a href="./manual_offload.html">Offload wares at stations, upgrades and other advanced features.</a></li>
+        <ul>
+            <li>[STATIONARY]</li>
+            <li>This covers /offload_order and /upgrade</li>
+        </ul>
+    <li><b>The Reader</b>: <a href="./manual_archives.html">The <s>ARCHIVE</s></a></li>
 </ol>
-<p>
-    1, 2 and 5 can only be used while the train is <i>stationary</i>.<br>
-    3 and 4 can only be used while the train is <i>driving</i>.
-</p>
+<hr><hr>
+
+
+<h2>Starting Operation</h2>
 <p>If this is your first time as an operator, use the following command to get started:</p>
 <blockquote>/startoperation</blockquote>
 
-<h1>0. Status and Awareness</h1>
 <h3>Seeing current information</h3>
 <p>At all times you can inspect the status of your train with this command:</p>
 <blockquote>/info</blockquote>
-<p>See the current status and information of the train.<br>
-
-    Includes information on current whereabouts and direction.<br>
-    
+<p>See the current position and direction of the train.<br>    
     Refer to the <a href="./atlas.html">Atlas</a> to understand your location.</p>
 
 <p>If you wish to be notified when the train arrives at or leaves a station, you can use the following command to setup a notification. This requires you to have made a role in the <s>Discord</s> you wish to use for notifications.</p>
@@ -54,6 +67,43 @@
 <p>Inventory is used to inspect your current inventory. Use this to know how much money you have at your disposal, as well as all wares purchased, and orders accepted.
 <br>
     For responsible operation, you should always be mindful of the amount of money available. Overspending will reflect poorly on your stature.</p>
+
+
+<h2>How to Perform as an Operator</h2>
+
+<p>
+In order to successfully complete your orders, here is a step-by-step guide on the processes required:
+<ol>
+    <li>Receive an order. <a href="./manual_orders.html">/receive</a></li>
+    <li>Buy the ware. <a href="./manual_orders.html">/buy</a></li>
+    <li>(After train has departed the station) Query databases for Recipient Information. <a href="./manual_query.html">/query</a></li>
+    <li>Fill orderslips with said information. <a href="./manual_query.html">/fillorder</a></li>
+    <li>(When at correct station) Offload Ware and Orderslip. <a href="./manual_offload.html">/offload_order</a></li>
+    <li>Repeat from step 1.</li>
+    <li><a href="./manual_archives.html"><s>Read the Archive</s></a></li>
+</ol>
+</p>
+
+<p>We trust that these guidelines will be enough to execute proper operation of the Choir Train you have been set in charge of, Operator.<br>Best of luck.</p>
+<p>Document Approved By the CRC For Usage Towards the Remote Operation of:</p>
+<blockquote>
+<p>CHOIR TRAIN 74</p>
+</blockquote>
+<p>This document must not be shared outside the CRC. Doing so is a punishable offense.</p>
+<p>Using the Irregular Telegraph for anything other than its intended purposes in this document is illegal and potentially harmful.</p>
+<p><i>— Salvation Through Faith —</i></p>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h1 class="colored">STATIONARY</h1>
 <p>The following commands are for use while the train is at a station.</p>
@@ -109,8 +159,8 @@ Keep in mind that failure to deliver an order will also accrue a severe penalty 
 <p>The following commands are for use while the train is traveling.</p>
 
 <h1>3. Finding Recipient Information</h1>
-<p>To be able to fulfill the order, you will need to find <b>the home address</b> and <b>name</b> of the order recipient. This is required for completion of the order slip. <br>
-    
+<p>To be able to fulfill the order, you will need <b>the home address</b> and <b>name</b> of the order recipient. This is required for completion of the order slip. <br>
+
     Every order contains a UC ID of the recipient that you will use as the starting point to find this information. Use the following command:</p>
 <blockquote>/query database [entry to query] [database key] [public]</blockquote>
 <p>Description of the arguments:</p>
@@ -125,7 +175,8 @@ Keep in mind that failure to deliver an order will also accrue a severe penalty 
     Thus, in most cases, you will need to use multiple databases to determine the exact address or name of any recipient. It is up to you to determine the best method for this.</p>
 
 <p>The databases you have access to are below, listed by what type of data they accept.<br>
-If you are unsure where to start, start with the “person” database and use the information in there to find the Name and the Home Address of the recipient.</p>
+If you are unsure where to start, start with the “person” database and use the information in there to find the Name and the Home Address of the recipient.<br>
+See section 3.1 if you are unable to ascertain this information.</p>
 
 <h3>3.a Databases Accepting Person IDs</h3>
 <ol>
@@ -277,7 +328,7 @@ If you are unsure where to start, start with the “person” database and use t
 
 <p>Once you have determined the necessary information for an Orderslip with reasonable accuracy, you can move on to 4.</p>
 <p><strong>3.1 Corrosion</strong> <br>
-    It may be impossible to determine the name or address of a recipient in some difficult cases due to the natural database corrosion. If this happens, you may proceed and consult Step 4.b</p>
+    It may be impossible to determine the name or address of a recipient in some difficult cases due to the natural database corrosion. If this happens, you may proceed and consult Step 4.a</p>
 
 <p><strong>3.2 Threading</strong> <br>
     Any query provided in a channel will divert into a thread. This is for ease of use when using multiple queries to find the necessary information for one recipient. You may provide additional queries inside the thread, for organization.</p>
@@ -297,7 +348,7 @@ Outside of being marked as empty in the Address information (see Section 3.c.1),
         <li><strong>Recipient Name</strong> found in Section 3. Spelling should be exact.</li>
         <li><strong>Address</strong> found in Section 3.</li>
         <ol type="a">
-            <li>If either the address or recipent name is unknown or corroded, refer to Section 4.b</li>
+            <li>If either the address or recipent name is unknown or corroded, refer to Section 4.a</li>
         </ol>
         <li><strong>Ware</strong>. List out the ware the order demands as a single line of text, no capitals:
             <ol type="a">
@@ -308,19 +359,21 @@ Outside of being marked as empty in the Address information (see Section 3.c.1),
             </ol>
         </li>
     </ol>
-<p>If any information is filled incorrectly, this will incur a monetary penalty upon order offload. Refer to section 4.b if uncertain about recipient information.</p>
-<h3 id="4-a-editing-orderslips">4.a Editing Orderslips</h3>
+<p>If any information is filled incorrectly, this will incur a monetary penalty upon order offload. Refer to section 4.a if uncertain about recipient information.</p>
+
+<h3 id="-4-a-filling-orderslips-with-corroded-addresses-and-names-"><strong>4.a Filling Orderslips With Corroded or Unknown Information</strong></h3>
+<p>As noted in Section 3.1 you may have recipients whose address or name you cannot accurately determine. You may still fill an orderslip if this is the case.<br>
+    Any information you cannot determine, you should manually mark as corroded by typing in the following without quotations in the appropriate fields:<br>
+”<b>For Decorrosion Provider</b>” (must be exact) <br> </p>
+<p>Note that offloading orders for Decorrosion Providers will cost a small fee, yet this fee is much cheaper than filing wrong information. If you are in doubt about the veracity of information, a Decorrosion Provider is preferable to sending the ware to a wrong destination or recipient.</p>
+
+<h3 id="4-b-editing-orderslips">4.b Editing Orderslips</h3>
 <p>If needed you can use the following command to edit orderslips at any time when not at a station:</p>
 
 <blockquote>/travel editslip</blockquote>
 
 <p>This will open the command window for the order slip with the corresponding ID, and allow you to edit the data.</p>
 
-<h3 id="-4-b-filling-orderslips-with-corroded-addresses-and-names-"><strong>4.b Filling Orderslips With Corroded Addresses and Names</strong></h3>
-<p>As noted in Section 3.b you may have recipients whose address you cannot accurately determine. You may still fulfill an orderslip if this is the case.<br>
-    Any information you cannot determine, be it address or name, you may manually mark as corroded by typing in the following without quotations in the orderslip at the appropriate field:<br>
-”<b>For Decorrosion Provider</b>” (must be exact) <br> </p>
-<p>Note that offloading orders for Decorrosion Providers will cost a fee, yet this fee is cheaper than filing wrong information. If you are in doubt about the veracity of information, the Decorrosion Providers will be a less costly option than sending the ware to a wrong destination or recipient.</p>
 
 <h1 class="colored">STATIONARY</h1>
 <p>The following commands are for use while the train is at a station.</p>
@@ -365,7 +418,7 @@ This is done with the following command:</p>
 <p>The name database will be checked against all existing names in all databases, to ensure you are not adding fake data.<br>You can also update existing information with the same command, using the name and the new address.<br>Querying this database in the future (see Section 3.b.5) will output information in the following format:</p>
 <pre><code class="lang-c">ID|<span class="hljs-string">Name :</span> Address (Last <span class="hljs-string">edited:</span> Timestamp)
 </code></pre>
-<p>The ID is useful for easy filling of order slips and reporting corrosion. Refer to Section 4.b, and 4.c.</p>
+<p>The ID is useful for easy filling of order slips and reporting corrosion. Refer to Section 4.a, and 6.2.</p>
 <p>Beware, due to natural data decomposition, this database too can become corrupted if the entry has not been under proper maintenance. Refer to the timestamp when making your judgment of its veracity. As with all databases, older entries should be considered candidates for decorrosion.</p>
 
 <p><strong>6.1a Using Addresses in the Internal Database for Orderslips</strong></p>
@@ -408,17 +461,6 @@ This is done with the following command:</p>
 <p>Use these when you wish.</p>
 
 <h1 class="coloredgreen">---</h1>
-
-<p>We trust that these guidelines will be enough to execute proper operation of the Choir Train you have been set in charge of, Operator.</p>
-<p>Best of luck.</p>
-<p>Document Approved By the CRC For Usage Towards the Remote Operation of:</p>
-<blockquote>
-<p>CHOIR TRAIN 74</p>
-</blockquote>
-<p>This document must not be shared outside the CRC. Doing so is a punishable offense.</p>
-<p>Using the Irregular Telegraph for anything other than its intended purposes in this document is illegal and potentially harmful.</p>
-<p><i>— Salvation Through Faith —</i></p>
-
 
 
 
