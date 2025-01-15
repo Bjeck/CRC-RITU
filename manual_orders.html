@@ -9,17 +9,85 @@
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<title>CRC RIT Manual</title>
+<title>CRC RIT Manual - Trading</title>
 
 </head>
 <body>
 <article>
 
     <h1 class="top">Manual for Remote Operation of the Irregular Telegraph</h1>
-    <h1 class="top">Order Receiving and Wares</h1>
+    <blockquote>This document is provided in collaboration with the Irregular Operations Line Service (IOLS) under clause of the Remote Freight Operation Act. Use for any other purpose is prohibited.</blockquote>
+
+<h1 class="colored">STATIONARY - TRADING</h1>
+
+<p>This document covers how to receive orders, and how to buy and sell wares.<br>The following commands are for use while the train is at a station.
+    <br><a href="manual.html">Back to Front Page.</a></p>
+
+<h1>1. Receiving Orders</h1>
+<p>Command:</p>
+<blockquote>/station receive</blockquote>
+<p>
+    This command receives a random assortment of available orders at your station.
+
+You will get three to choose from. <br>
+
+Each order lists a <b>ware</b>, a <ib>recipient</b>, an <b>estimated cost</b>, a <b>reward</b>, a <b>destination</b>, and an <b>estimated database corrosion</b>.
+</p>
+<ul>
+    <li>The <b>ware</b> is what they are asking for. You will need to acquire this and bring it to the customer. The stars (*) next to the name indicates the size of the ware.</li>
+    <li>The <b>recipient</b> is listed with their Official UC ID. You will use this to find their personal information for offloading (See <a href="manual_query.html">Section 3</a>). A UC ID follows the format 123-456.</li>
+    <li>The <b>reward</b> is how much money you will be paid once the order has been successfully completed.</li>
+    <li>The <b>estimated cost</b> is an estimation based on the regular price of the ware and the travel costs of storing it (accruing taxes and tariffs). This is an estimation and may be inaccurate. We trust you judge the efficacy of the order judiciously.</li>
+    <li>The <b>destination</b> is the Precinct the order must be offloaded at. Consider this in relation to your current location when choosing. Further distances will require longer travel time (increasing expenditure of tariffs and taxes).</li>
+    <li>The <b>Estimated DB Corrosion</b> is an estimation of the corrosion of the data for the recipient. Less corroded data will make the recipients information easier to ascertain. More corroded entries should be left to experienced Operators.</li>
+</ul>
+<p>Pick the most profitable and efficient based on your needs by pressing the appropriate of the three buttons.<br>
+Remember you can see your available money, your current orders and wares with the inventory command. It may be valuable to inspect the price chart (Section 2.a) before you choose.</p>
+
+<p><b>1.a Penalties Upon Failing to Receive Orders</b><br>
+
+If you <b>cancel</b> the order reception procedure or <b>fail to pick</b> an order within <b>5 minutes</b> of requesting, you will be incurred a penalty, due to increased administration costs. We expect you to be able to accept an order when you request.
+<br><br>
+<b>1.b Penalties Upon Failing to Deliver Orders</b><br>
+
+Keep in mind that failure to deliver an order will also accrue a severe penalty (and unhappy customers). We expect you to pick orders you are able to complete.</p>
+
+<h1>2. Buying Wares</h1>
+<p>To fulfill orders you will need to buy the appropriate wares:<br></p>
+<blockquote>/station buy [ware] [amount]</blockquote>
+<p>The buy command can buy any wares the current station has. Note, not all wares will be sold at all stations. It is advised to not purchase wares outside of the CRC market.</p>
+
+<strong>2.a Seeing the CRC Price chart</strong>
+<p>The price chart shows the wares available at the CRC market at the local station.</p>
+<blockquote>/station pricechart</blockquote>
+<p>As per CRC policy, all purchases must go through official channels. As such, wares not listed in the pricechart are unsafe for purchase.<br>
+    Ware prices might differ at each station. Be mindful of this when choosing orders to fulfill, as there is much to be gained from choosing your options wisely.<br>
+    Refer to the <a href="./atlas.html">Atlas</a> for guidance of general pricing, although we are aware this does not provide complete information.</p>
+
+<strong>2.b Selling Wares</strong>
+<p>If needed, you can sell wares with the following command:<br></p>
+<blockquote>/station sell [ware]</blockquote>
+<p>Note that prices for all wares will be lesser than the purchase price as there is an incurred fee upon relocation of the ware. Selling wares is best avoided.</p>
+
+<b><hr><hr></b>
+
+<h2><i>Reference</i></h2>
+<ol>
+    <li><a href="manual.html">Front Page</a></li>
+    <li><a href="./manual_orders.html">Stationary - Trading</a> </li>
+    <li><a href="./manual_query.html">Travel - Investigating</a></li>
+    <li><a href="./manual_offload.html">Stationary - Managing</a></li>
+    <li><a href="./manual_archives.html">The <s>ARCHIVE</s></a></li>
+</ol>
 
 
-    
+<p><i>Document Approved By the CRC For Usage Towards the Remote Operation of:</i></p>
+<blockquote>
+<p>CHOIR TRAIN 74</p>
+</blockquote>
+<p>This document must not be shared outside the CRC. Doing so is a punishable offense.<br>Using the Irregular Telegraph for anything other than its intended purposes in this document is illegal and potentially harmful.</p>
+<p><i>— Salvation Through Faith —</i></p>
+
 
 </article>
 </body>

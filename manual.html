@@ -25,27 +25,32 @@
 <h2>How to Use This Manual</h2>
 <p>The Telegraph is designed to be used by multiple people, filling different roles for successful operation<br>
 <i><br>The CRC notes that your allocated resources means you may have to work with fewer or more operators than this manual has been written for. We are confident you will make it work.</i>
-   <br><br> These roles are covered in each section below</p>
+   <br><br> These roles are covered in each section below:</p>
 
 <ol>
-    <li><b>The Trader</b> (Sections 1 and 2): <a href="./manual_orders.html">Receiving orders and Buying Wares</a> </li>
+    <li><a href="./manual_orders.html"><b>The Trader</b></a> (Sections 1 and 2): <a href="./manual_orders.html">Receiving orders and Buying Wares</a> </li>
         <ul>
-            <li>[STATIONARY]</li>
             <li>This covers /receive, /buy, /sell, and /pricechart.</li>
         </ul>
-    <li><b>The Investigator</b> (Sections 3 and 4): <a href="./manual_query.html">Querying information and filling order slips.</a></li>
+    <li><a href="./manual_query.html"><b>The Investigator</b></a> (Sections 3 and 4): <a href="./manual_query.html">Querying information and filling order slips.</a></li>
         <ul>
-            <li>[TRAVELLING]</li>
             <li>This covers /query, /fillorder, and /editslip</li>
         </ul>
-    <li><b>The Manager</b> (Sections 5 and 6): <a href="./manual_offload.html">Offload wares at stations, upgrades and other advanced features.</a></li>
+    <li><a href="./manual_offload.html"><b>The Manager</b></a> (Sections 5 and 6): <a href="./manual_offload.html">Offload wares at stations, upgrades and other advanced features.</a></li>
         <ul>
-            <li>[STATIONARY]</li>
             <li>This covers /offload_order and /upgrade</li>
         </ul>
-    <li><b>The Reader</b>: <a href="./manual_archives.html">The <s>ARCHIVE</s></a></li>
+    <li><a href="./manual_archives.html"><b>The Reader</b></a>: <a href="./manual_archives.html">The <s>ARCHIVE</s></a></li>
+    <ul>
+        <li>This covers reading the Archive.</li>
+    </ul>
+    
+    <li>The <s>Eye</s>: [REDACTED]</a></li>
+    <ul>
+        <li>This covers [REDACTED].</li>
+    </ul>
 </ol>
-<hr><hr>
+<b><hr><hr></b>
 
 
 <h2>Starting Operation</h2>
@@ -69,399 +74,31 @@
     For responsible operation, you should always be mindful of the amount of money available. Overspending will reflect poorly on your stature.</p>
 
 
-<h2>How to Perform as an Operator</h2>
+<h2>How To Execute an Operation</h2>
 
 <p>
-In order to successfully complete your orders, here is a step-by-step guide on the processes required:
+In order to successfully complete your orders, here is a guide to the processes required:
 <ol>
-    <li>Receive an order. <a href="./manual_orders.html">/receive</a></li>
+    <li>(At a station) Receive an order. <a href="./manual_orders.html">/receive</a></li>
     <li>Buy the ware. <a href="./manual_orders.html">/buy</a></li>
-    <li>(After train has departed the station) Query databases for Recipient Information. <a href="./manual_query.html">/query</a></li>
+    <li>(When train is travelling) Query databases for Recipient Information. <a href="./manual_query.html">/query</a></li>
     <li>Fill orderslips with said information. <a href="./manual_query.html">/fillorder</a></li>
-    <li>(When at correct station) Offload Ware and Orderslip. <a href="./manual_offload.html">/offload_order</a></li>
+    <li>(At correct station) Offload Ware and Orderslip. <a href="./manual_offload.html">/offload_order</a></li>
     <li>Repeat from step 1.</li>
     <li><a href="./manual_archives.html"><s>Read the Archive</s></a></li>
 </ol>
 </p>
 
 <p>We trust that these guidelines will be enough to execute proper operation of the Choir Train you have been set in charge of, Operator.<br>Best of luck.</p>
-<p>Document Approved By the CRC For Usage Towards the Remote Operation of:</p>
+
+<b><hr><hr></b>
+
+<p><i>Document Approved By the CRC For Usage Towards the Remote Operation of:</i></p>
 <blockquote>
 <p>CHOIR TRAIN 74</p>
 </blockquote>
-<p>This document must not be shared outside the CRC. Doing so is a punishable offense.</p>
-<p>Using the Irregular Telegraph for anything other than its intended purposes in this document is illegal and potentially harmful.</p>
+<p>This document must not be shared outside the CRC. Doing so is a punishable offense.<br>Using the Irregular Telegraph for anything other than its intended purposes in this document is illegal and potentially harmful.</p>
 <p><i>— Salvation Through Faith —</i></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1 class="colored">STATIONARY</h1>
-<p>The following commands are for use while the train is at a station.</p>
-
-<h1>1. Accepting Orders</h1>
-<p>Command:</p>
-<blockquote>/station receive</blockquote>
-<p>
-    This command receives a random assortment of available orders at your station.
-
-You will get three to choose from. <br>
-
-Each order lists a <b>ware</b>, a <ib>recipient</b>, an <b>estimated cost</b>, a <b>reward</b>, a <b>destination</b>, and an <b>estimated database corrosion</b>.
-</p>
-<ul>
-    <li>The <b>ware</b> is what they are asking for. You will need to acquire this and bring it to the customer. The stars (*) next to the name indicates the size of the ware.</li>
-    <li>The <b>recipient</b> is listed with their Official UC ID. You will use this to find their personal information for offloading (See Section 3). A UC ID follows the format 123-456.</li>
-    <li>The <b>reward</b> is how much money you will be paid once the order has been successfully completed.</li>
-    <li>The <b>estimated cost</b> is an estimation based on the regular price of the ware and the travel costs of storing it (accruing taxes and tariffs). This is an estimation and may be inaccurate. We trust you judge the efficacy of the order judiciously.</li>
-    <li>The <b>destination</b> is the Precinct the order must be offloaded at. Consider this in relation to your current location when choosing. Further distances will require longer travel time (increasing expenditure of tariffs and taxes).</li>
-    <li>The <b>Estimated DB Corrosion</b> is an estimation of the corrosion of the data for the recipient. Less corroded data will make the recipients information easier to ascertain. More corroded entries should be left to experienced Operators.</li>
-</ul>
-<p>Pick the most profitable and efficient based on your needs by pressing the appropriate of the three buttons.<br>
-Remember you can see your available money, your current orders and wares with the inventory command. It may be valuable to inspect the price chart (Section 2.1) before you choose.</p>
-
-<p><b>1.a Penalties Upon Failing to Receive Orders</b><br>
-
-If you <b>cancel</b> the order reception procedure or <b>fail to pick</b> an order within <b>5 minutes</b> of requesting, you will be incurred a penalty, due to increased administration costs. We expect you to be able to accept an order when you request.
-<br><br>
-<b>1.b Penalties Upon Failing to Deliver Orders</b><br>
-
-Keep in mind that failure to deliver an order will also accrue a severe penalty (and unhappy customers). We expect you to pick orders you are able to complete.</p>
-
-<h1>2. Buying Wares</h1>
-<p>To fulfill orders you will need to buy the appropriate wares:<br></p>
-<blockquote>/station buy [ware] [amount]</blockquote>
-<p>The buy command can buy any wares the current station has. Note, not all wares will be sold at all stations. It is advised to not purchase wares outside of the CRC market.</p>
-
-<strong>2.a Seeing the CRC Price chart</strong>
-<p>The price chart shows the wares available at the CRC market at the local station.</p>
-<blockquote>/station pricechart</blockquote>
-<p>As per CRC policy, all purchases must go through official channels. As such, wares not listed in the pricechart are unsafe for purchase.<br>
-    Ware prices might differ at each station. Be mindful of this when choosing orders to fulfill, as there is much to be gained from choosing your options wisely.<br>
-    Refer to the <a href="./atlas.html">Atlas</a> for guidance of general pricing, although we are aware this does not provide complete information.</p>
-
-<strong>2.b Selling Wares</strong>
-<p>If needed, you can sell wares with the following command:<br></p>
-<blockquote>/station sell [ware]</blockquote>
-<p>Note that prices for all wares will be lesser than the purchase price as there is an incurred fee upon relocation of the ware. Selling wares is best avoided.</p>
-
-
-<h1 class="coloredgreen">TRAVELLING</h1>
-<p>The following commands are for use while the train is traveling.</p>
-
-<h1>3. Finding Recipient Information</h1>
-<p>To be able to fulfill the order, you will need <b>the home address</b> and <b>name</b> of the order recipient. This is required for completion of the order slip. <br>
-
-    Every order contains a UC ID of the recipient that you will use as the starting point to find this information. Use the following command:</p>
-<blockquote>/query database [entry to query] [database key] [public]</blockquote>
-<p>Description of the arguments:</p>
-<ul>
-    <li>The “entry to query” must be exact to specifications. This is either the name of a person or an address.</li>
-    <li>Database key is the name of the database. See below of possible databases.</li>
-    <li>“Public” is whether the result should be visible to other fellow Operators. Defaults to True if not provided.</li>
-</ul>
-
-<p>Databases will likely return multiple possible results for any query. Existent database decomposition leaves individual databases incomplete and untrustworthy.<br>
-
-    Thus, in most cases, you will need to use multiple databases to determine the exact address or name of any recipient. It is up to you to determine the best method for this.</p>
-
-<p>The databases you have access to are below, listed by what type of data they accept.<br>
-If you are unsure where to start, start with the “person” database and use the information in there to find the Name and the Home Address of the recipient.<br>
-See section 3.1 if you are unable to ascertain this information.</p>
-
-<h3>3.a Databases Accepting Person IDs</h3>
-<ol>
-    <li> Personal Register</li>
-    <ol type="a">
-        <li><i>The official UC Person Identification Database</i></li>
-        <li>database key: <strong>"person"</strong></li>
-        <li>Expects the ID of a person (An ID has the format 123-456). Outputs all known information about the person in the following order:</li>
-            <ol>
-                <li>Name</li>
-                <li>Job</li>
-                <li>Work Address</li>
-                <li>Home Address</li>
-                <li>District</li>
-            </ol>
-        <li>These may have No Entry. Use this to inform your future queries. This database is kept clean and any corrupted entry is deleted. Thus if this database has information, you can consider it trustworthy.</li>
-        <li>Note: You may be fortunate that this database includes both the name and the home address. In this case you will not need to consult any other databases and can proceed to Step 4.</li>
-    </ol>
-	<li>Internal RIT Operator Database<ol>
-	<li>database key: <strong>“internal”</strong></li>
-	<li>Advanced Internal storage. See 6.1 for more information about the Internal Database. This requires an upgrade and is not available at first.</li>
-	</ol>
-</ol>
-
-<hr>
-
-<h3 id="3-b-databases-accepting-names-">3.b Databases Accepting Names:</h3>
-<ol>
-<li>The UC Voting Registry:<ol type="a">
-<li><em>The common voting registry for United Council voting information.</em></li>
-<li>database key: “<strong>voting</strong>”</li>
-<li>Expects the name of a person, outputs possible addresses linked to that person.</li>
-</ol>
-</li>
-<li>International Utility Archives:<ol type="a">
-<li><i>The International Utility Archives, maintained by the TCSS.</i></li>
-<li>database key: “<strong>utility</strong>”</li>
-<li>Expects the name of a person, outputs possible districts that person lives in.</li>
-</ol>
-</li>
-<li>Occupation Census<ol type="a">
-<li><em>The Occupation Census maintained by the Church for regulatory purposes.</em></li>
-<li>database key: <strong>“occupation”</strong></li>
-<li>Expects the name of a person, outputs possible known occupations and professions of that person.</li>
-</ol>
-</li>
-<li>Official Taxation Offices<ol type="a">
-<li><em>Records maintained for Taxation purposes.</em></li>
-<li>database key: <strong>“offices”</strong></li>
-<li>Expects the name of a person, outputs possible work addresses of that person.</li>
-</ol>
-</li>
-<li>Internal RIT Operator Database<ol type="a">
-<li>database key: <strong>“internal”</strong></li>
-<li>Advanced Internal storage. See 6.1 for more information about the Internal Database. This requires an upgrade and is not available at first.</li>
-</ol>
-</li>
-</ol>
-
-<hr>
-
-<h3 id="3-c-databases-accepting-addresses-">3.c Databases Accepting Addresses:</h3>
-<ol>
-<li>CRC Address Database<ol>
-<li><em>The CRC’s internal database of address information.</em> </li>
-<li>database key: “<strong>address</strong>”</li>
-<li>Expects the name of an address. Returns metadata on the address.<ol type="a">
-<li>Key to understand the metadata: [vacancy][type][precinct][district]<ol>
-<li>Vacancy: 0 or 1. 0 indicates empty. 1 indicates the address is inhabited.</li>
-<li>Type. 0 = Residential address. 1 = Commercial. 2 = Official. 3 = State<ol type="a">
-<li>NOTE: At your current clearance level, regular orders you receive will only be to residential addresses. All other addresses can be discarded.</li>
-</ol>
-</li>
-<li>Precinct: The number of the Precinct.</li>
-<li>District: District information following the Precinct postal district code.</li>
-</ol>
-</li>
-<li>NOTE: Metadata is purely informational. It can be useful to eliminate possibilities but it is not proof of address.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Records of Estate<ol type="a">
-<li><em>Records of Estate, collected and prepared by the Concord of Estate Agencies.</em></li>
-<li>database key: "<b>estate</b>"</li>
-<li>Expects a home address, outputs names of possible people living at the address. </li>
-</ol>
-</li>
-<li>CRC Employee Archives<ol type="a">
-<li><em>Known records of Employees working at companies, gathered by the CRC.</em></li>
-<li>database key: "<b>employee</b>"</li>
-<li>Expects a work address, outputs names of possible employees at the address.</li>
-</ol>
-</li>
-<li>Popular Commuting Registry<ol type="a">
-<li><em>Popular Commuting Registry, maintained by organized laborers.</em></li>
-<li>database key: "<b>commuting</b>"</li>
-<li>Expects a work address, outputs possible home addresses of employees at the address.</li>
-</ol>
-</li>
-</ol>
-
-<hr>
-
-<h3 id="3-d-databases-accepting-districts-">3.d Databases Accepting Districts:</h3>
-<p><i>NOTE: Due to the repetition of District numbers across Precincts, querying all Precincts for district information is not possible. Thus, when querying district databases, one must include the Precinct within the query. If one wants to search for District 3 in Precinct 5, the query is thus: “3-5”</i></p>
-<ol>
-<li>Postage District Information:<ol type="a">
-<li><em>Database used by Postal Services and all courier activity. Highly accurate.</em></li>
-<li>database key: “<strong>postage</strong>”</li>
-<li>Expects the name of a district and precinct ("district-precinct"). Returns all street addresses within that District.</li>
-</ol>
-</li>
-<li>Centralized Corporation Registry<ol type="a">
-<li><em>Corporation Registry enforced by the UC for Taxation purposes.</em></li>
-<li>database key: "<b>companies</b>"</li>
-<li>Expects the name of a district and precinct ("district-precinct"). Returns all known work addresses within that district.</li>
-</ol>
-</li>
-</ol>
-
-<hr>
-
-<h3 id="3-e-databases-accepting-street-names-">3.e Databases Accepting Street Names:</h3>
-<ol>
-<li>The Precinct Planning Street Registry<ol type="a">
-<li><em>An aggregate database collecting street planning information from each Precinct.</em></li>
-<li>database key: "<b>street</b>"</li>
-<li>Expects the name of an entire street (no number). Returns information about the street:<ol type="a">
-<li>Length of street (used to know how many individual addresses exist)</li>
-<li>Names of Districts this street overlaps.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
-<hr>
-
-<h3 id="3-f-databases-accepting-job-titles-">3.f Databases Accepting Job Titles:</h3>
-<ol>
-<li>Job Application Database<ol type="a">
-<li><em>An unofficial database collected and maintained by recruiters and job searchers.</em></li>
-<li>database key: “<strong>application</strong>”</li>
-<li>Expects the name of a job title<strong>,</strong> outputs work addresses that employ that occupation.</li>
-</ol>
-</li>
-</ol>
-
-<p>Once you have determined the necessary information for an Orderslip with reasonable accuracy, you can move on to 4.</p>
-<p><strong>3.1 Corrosion</strong> <br>
-    It may be impossible to determine the name or address of a recipient in some difficult cases due to the natural database corrosion. If this happens, you may proceed and consult Step 4.a</p>
-
-<p><strong>3.2 Threading</strong> <br>
-    Any query provided in a channel will divert into a thread. This is for ease of use when using multiple queries to find the necessary information for one recipient. You may provide additional queries inside the thread, for organization.</p>
-<p><strong>3.3 Vacancy</strong> <br>
-Outside of being marked as empty in the Address information (see Section 3.c.1), an address can also be marked as vacant through its tenant being named “<strong>V. Vacant</strong>”. This is an legacy marking of Vacancy still used by the Estate Census. Any entry with this should be considered a vacant address at the time of reporting (yet of course, this may be corroded data and should be treated as no different than other information).</p>
-
-
-<h1>4. Filling Order Slips</h1>
-<p><em>Note, while this command is in the travel section you are able to use it while both travelling and stationary. This is due to a quirk in the IOLS protocols.</em></p>
-<p>Before you can offload an order, you must fill an order slip. This is the command:</p>
-
-<blockquote>/travel fillorder</blockquote>
-
-<p>For this you will need the following information:</p>
-    <ol>
-        <li><strong>Order ID</strong>. This is found in the original order.</li>
-        <li><strong>Recipient Name</strong> found in Section 3. Spelling should be exact.</li>
-        <li><strong>Address</strong> found in Section 3.</li>
-        <ol type="a">
-            <li>If either the address or recipent name is unknown or corroded, refer to Section 4.a</li>
-        </ol>
-        <li><strong>Ware</strong>. List out the ware the order demands as a single line of text, no capitals:
-            <ol type="a">
-            <li>Example: “shoes”</li>
-            <li>Spaces are allowed if the ware is in multiple words.</li>
-            <li>The orderslip requires the ware to be on the train. The porters will check for the ware and report if the orderslip ware is not present on the train.</li>
-            <li>Note: The local customs agents depend on accurate reporting of wares on order slips.</li>
-            </ol>
-        </li>
-    </ol>
-<p>If any information is filled incorrectly, this will incur a monetary penalty upon order offload. Refer to section 4.a if uncertain about recipient information.</p>
-
-<h3 id="-4-a-filling-orderslips-with-corroded-addresses-and-names-"><strong>4.a Filling Orderslips With Corroded or Unknown Information</strong></h3>
-<p>As noted in Section 3.1 you may have recipients whose address or name you cannot accurately determine. You may still fill an orderslip if this is the case.<br>
-    Any information you cannot determine, you should manually mark as corroded by typing in the following without quotations in the appropriate fields:<br>
-”<b>For Decorrosion Provider</b>” (must be exact) <br> </p>
-<p>Note that offloading orders for Decorrosion Providers will cost a small fee, yet this fee is much cheaper than filing wrong information. If you are in doubt about the veracity of information, a Decorrosion Provider is preferable to sending the ware to a wrong destination or recipient.</p>
-
-<h3 id="4-b-editing-orderslips">4.b Editing Orderslips</h3>
-<p>If needed you can use the following command to edit orderslips at any time when not at a station:</p>
-
-<blockquote>/travel editslip</blockquote>
-
-<p>This will open the command window for the order slip with the corresponding ID, and allow you to edit the data.</p>
-
-
-<h1 class="colored">STATIONARY</h1>
-<p>The following commands are for use while the train is at a station.</p>
-
-<h1>5. Offloading Wares</h1>
-<p>Finally, once the order has been filled and is ready, you can offload the wares for the order at the appropriate station. 
-This is done with the following command:</p>
-
-<blockquote> /station offload_order [orderslip ID] [ware] </blockquote>
-
-<p>Please refer to the order for the appropriate wares to offload.<br>Offloading wares requires an active order AND an orderslip to be filled out and present in your inventory, as well as the ware.
-    <br>
-    The orderslip ID is identical to the Order ID.<br></p>
-    <p>Upon offloading, the orderslip will be inspected by customs. If all seems in order, it will be sent to the local courier service and transported to the recipient address. If all information on the Orderslip was correct, you will be paid the reward. If there are any issues, you will be forced to pay fines or fees.
-</p>
-
-
-
-
-<h1>6. Advanced Upgrades</h1>
-<p>While you will be equipped with all necessary functionality for train operation, it is possible for you to upgrade your capabilities for a fee.<br>As this is a /station command, upgrades can only be viewed and purchased at stations.<br>
-    See the possible upgrades with the following command:</p>
-
-<blockquote>/station upgrade</blockquote>
-
-<p>Upgrades are purchased using the same command, followed by an argument:</p>
-
-<blockquote>/station upgrade [name]</blockquote>
-
-<p>The [name] can either be the full name or the 3-letter Upgrade Code listed beside it.</p>
-<p>Some upgrades are self-explanatory and will not be explained here, yet some require some deeper explanations and are covered below.</p>
-
-
-<h3 id="-6-1-the-internal-database-uid-"><strong>6.1 Upgrade: The Internal Database (UID)</strong></h3>
-
-<p>As a certified RIT Unit Operator, you can gain access to an internally updatable database of addresses. This database is malleable and updated by you and your fellow operators. Proper maintenance of this database will allow easy rediscovery of addresses discovered previously, or you may find a fellow operator has already found what you are searching for.</p>
-<p>Usage of this is entirely optional and the internal database is only useful if you know the name of the recipient.</p>
-<p>The following command allows adding a new address to the database:</p>
-
-<blockquote>/query internalstorage [name] [address] </blockquote>
-
-<p>The name database will be checked against all existing names in all databases, to ensure you are not adding fake data.<br>You can also update existing information with the same command, using the name and the new address.<br>Querying this database in the future (see Section 3.b.5) will output information in the following format:</p>
-<pre><code class="lang-c">ID|<span class="hljs-string">Name :</span> Address (Last <span class="hljs-string">edited:</span> Timestamp)
-</code></pre>
-<p>The ID is useful for easy filling of order slips and reporting corrosion. Refer to Section 4.a, and 6.2.</p>
-<p>Beware, due to natural data decomposition, this database too can become corrupted if the entry has not been under proper maintenance. Refer to the timestamp when making your judgment of its veracity. As with all databases, older entries should be considered candidates for decorrosion.</p>
-
-<p><strong>6.1a Using Addresses in the Internal Database for Orderslips</strong></p>
-<p>Advanced use of the /fillorder command allows inputting the UC ID of the person stored in the internal address database into the address field when typing the command. Upon sending the /fillorder command, the internal database will be cross-referenced if a UC ID is present  in the address field, and if successful, the address will be filled in. You can refer to the command window to confirm.</p>
-
-<h3 id="6-2-corrosion-reporting-ucr-">6.2 Corrosion Reporting (UCR)</h3>
-<p>As per the nature of corroded databases, you might find an address impossible to conclusively ascertain from the databases. In this case, you can report it for corrosion repair at a local decorrosion provider. (Note: this is different from sending an order to a decorrosion provider, this is a more long-term solution that affects the database itself, rather than just the order).</p>
-<p>This is done through the following command:</p>
-
-<blockquote>/query report [id] [(optional) name]</blockquote>
-
-<p>Upon successfully reporting, this command will create an entry in the internal database (see 6.1) (This upgrade thus requires The Internal Database).<br>The address will in this case be marked for decorrosion. It is also possible to use this information for easy filling of orderslips same as the regular internal database. See 6.1a for information on how to do this. Note that while this has been filled, it will take a Decorrosion Provider some time to update the database information.<br>
-    You may optionally provide a name if you have determined it, and it will be stored in the entry as well. If not, it will automatically be filled in with the value “For Decorrosion Provider”</p>
-<p>The Connective Rail Company thanks you for doing this service to improve decorrosion in our data.</p>
-
-
-
-<h1 class="coloredpurple">[THE] <s>ARCHIVE</s></h1>
-
-<p>The Telegraph has also been equipped with an archival feature. See the following super-command and its sub-commands:</p>
-
-<blockquote>/archive</blockquote>
-
-<p>All messages sent to you will be present in the Archive through the following command:</p>
-
-<blockquote>/archive read [entry]</blockquote>
-
-<p>Usage of the Archive is not required of Operators and is viewed as extracurricular activity and thus is not thoroughly explained within this document.</p>
-<p>Excessive use is discouraged.</p>
-<p>The IOLS has advised that the Irregular Telegraph is experimental and can function unexpectedly. The Telegraph may receive messages sent by sources outside the CRC, which are not required for Freight Operation. The CRC or IOLS is not responsible nor legally bound by any such messages and they should be immediately discarded and ignored for your safety. Any such messages will be stored in the archive for future processing and inspection.</p>
-<p>Any suspicious activity seen on the Telegraph should be reported to your superiors.</p>
-<p>Other useful elements of the archive are the commands for the weekly newspaper and the CRC encyclopedia:</p>
-
-<blockquote>/archive encyclopedia</blockquote>
-
-<p>and</p>
-
-<blockquote>/archive newspaper</blockquote>
-
-<p>Use these when you wish.</p>
-
-<h1 class="coloredgreen">---</h1>
-
 
 
 </article>
