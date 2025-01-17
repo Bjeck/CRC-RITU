@@ -5,7 +5,7 @@ body {
 body.home {
   background: url("backgroundflair.png");  
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: right;
   background-position-y: top;
 }
 body.atlas {
