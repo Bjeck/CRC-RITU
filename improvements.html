@@ -25,6 +25,56 @@
 <h1 class="top">Improvements to the Remote Irregular Telegraph</h1>
 <blockquote>These improvements are provided by the Connective Rail Company (CRC) in collaboration with the Irregular Operations Line Service (IOLS) for use under the Remote Freight Operation Act.</blockquote>
 
+<h2>Improvement Listing March 3rd 8725, 4:00:00</h2>
+<ol>
+    <li>The IOLS have forced us to set a maximum amount of active orders Operators can hold at one time. The previous amount of orders Operators were accepting was causing a strain on regular Telegraph operation. The current maximum is 15, though we are willing to listen to negotiate, if this number can be adjusted. (Note, if you have more than this number of orders, they will remain, but you will be unable to receive new orders until they have cleared.</li>
+    <li>A major issue was found in the Query Reporting Feature, which caused it to not report back to Operators when Decorrosion Providers fixed an entry. Now the reporting feature should function properly. The manual has been clarified on how this is works now, see <a href="manual_offload.html">section 6.2</a>.</li>
+    <li>Minor adjustments to the telegraph message acquisition parameters.</li>
+</ol>
+<b><hr></b>
+
+
+<h2>Improvement Listing February 24th 8725, 4:00:00</h2>
+<ol>
+    <li>Two new upgrades have been made available. Please refer to the /upgrade command for the upgrades with IDs IAO and QAO.</li>
+    <li>The Archive entry RITU_7 can now be read.</li>
+    <li>Minor adjustments to the telegraph message acquisition parameters.</li>
+</ol>
+<b><hr></b>
+
+
+<h2>Improvement Listing February 19th 8725, 21:00:00</h2>
+<ol>
+    <li>Fixed issues when the train connection was re-established. Most of these would be invisible to operators. Notable is that the price increase on order cancellation will reset properly. This also caused inspections to not be shown to Operators after re-connection.</li>
+    <li>Querying district dabases with incorrect formats provided an error. Now it provides an informative message.</li>
+    <li>Minor other fixes.</li>
+</ol>
+<b><hr></b>
+
+<h2>Improvement Listing February 11th 8725, 22:00:00</h2>
+<ol>
+    <li>The Church has informed us that the Regular Inquisition Inspections of Choir Trains will begin now. Inspections may occur when a train stops at a station. Any contraband on board will be confiscated if found.</li>
+    <li><i>Note: An upgrade has been implemented to help with the above. Check USC, Also note they check more regularly close to Precinct 1 than further out - Gallica.</i></li>
+    <li>Inventory command will no longer give an error when inventory exceeds 2000 characters. This telegraph limitation still exists (The IOLS insists it is impossible to solve), yet now the inventory will truncate.</li>
+    <li>Decorroded an address in the Precinct 7 databases. We apologize for this… unfortunate corrosion.</li>
+    <li>Four Encyclopedia entries have been added.</li>
+</ol>
+<b><hr></b>
+
+<h2>Improvement Listing February 3rd 8725, 4:00:00</h2>
+<ol>
+    <li>New Initiative: Issue Reward System. Going forward, Operators who find and accurately report issues with the Telegraph will be monetarily rewarded. Use the <i>/brief</i> command to report any issues.</li>
+    <li>We have cracked down on potential thieves within the porters on the train. You should no longer lose items in storage. Please continue to report further missing items or issues.</li>
+    <li>The CRC noticed some unintentional usage of the order cancellation option, causing undue strain on administrative costs. The cost of cancelling order reception will now increase each time you do so for each station (note, though, that the first cancellation is cheaper).</li>
+    <li>An issue in the Telegraph connection to the Driver was noticed. This connection should now function. (CRC Note: We don’t know what this is for, but the IOLS requested it.)</li>
+    <li>Fixed bug causing [REDACTED] orders to have duplicate IDs.</li>
+    <li>Adjusted reward and chances of seeing [REDACTED] orders. </li>
+    <li>Fixed minor corrosion in archive entries</li>
+    <li>Added 4 new encyclopedia entries, including The Chronicle of The Salvation Church, The Eye, and The Church of Our Salvation.</li>
+</ol>
+
+<b><hr></b>
+
 <h2>Improvement Listing January 27th 8725, 4:00:00</h2>
 <ol>
     <li>New added command: <i>/brief</i>. Allows direct communication to your CRC Manager. Refer to the Manual, Section Archives. (Note: Due to Telegraph delays, it may take a few hours until this command is available)</li>
